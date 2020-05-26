@@ -9,14 +9,14 @@ namespace practicing_algorithms.algorithms.sort
 
     public void Sort()
     {
-      for(var i=0; i<=numbers.Length-2; i++)
+      for(var outerIndex=0; outerIndex<=numbers.Length-2; outerIndex++)
       {
         for(var index=0; index<=numbers.Length-2; index++)
         {
           var numberAtLeft  = numbers[index];
           var numberAtRight = numbers[index+1];
 
-          Print(i, index, numberAtLeft, numberAtRight);
+          Print(outerIndex, index, numberAtLeft, numberAtRight);
 
           if(numberAtLeft > numberAtRight)
           {
@@ -28,10 +28,10 @@ namespace practicing_algorithms.algorithms.sort
       }
     }
 
-    void Print(int i, int index, int numberAtLeft, int numberAtRight)
+    void Print(int outerIndex, int index, int numberAtLeft, int numberAtRight)
     {
       Write("Curr:" + string.Join(',', numbers) + " ");
-      Write(i + ":" + index + ":" + (index+1) + "=>");
+      Write(outerIndex + ":" + index + ":" + (index+1) + "=>");
       Write(numberAtLeft + "," + numberAtRight);
     }
     void Print() => WriteLine(" New:" + string.Join(',', numbers));
