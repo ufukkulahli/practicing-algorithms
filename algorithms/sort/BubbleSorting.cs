@@ -1,3 +1,5 @@
+using static System.Console;
+
 namespace practicing_algorithms.algorithms.sort
 {
   public sealed class BubbleSorting
@@ -28,10 +30,10 @@ namespace practicing_algorithms.algorithms.sort
 
     void Print(int i, int index, int numberAtLeft, int numberAtRight)
     {
-      System.Console.Write("Curr:" + string.Join(',', numbers) + " ");
-      System.Console.Write(i + ":" + index + ":" + (index+1) + "->");
-      System.Console.Write(numberAtLeft + "," + numberAtRight);
+      Write("Curr:" + string.Join(',', numbers) + " ");
+      Write(i + ":" + index + ":" + (index+1) + "=>");
+      Write(numberAtLeft + "," + numberAtRight);
     }
-    void Print() => System.Console.WriteLine(" New:" + string.Join(',', numbers));
+    void Print() => WriteLine(" New:" + string.Join(',', numbers));
   }
 }
