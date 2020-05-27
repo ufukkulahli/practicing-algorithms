@@ -1,6 +1,6 @@
 using static System.Console;
 
-namespace practicing_algorithms.algorithms.sort
+namespace practicing_algorithms.algorithms.sort.exchange
 {
   public sealed class BubbleSorting
   {

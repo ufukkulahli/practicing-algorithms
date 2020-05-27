@@ -1,8 +1,8 @@
 using System;
-using practicing_algorithms.algorithms.sort;
+using practicing_algorithms.algorithms.sort.exchange;
 using Xunit;
 
-namespace practicing_algorithms.tests.sort
+namespace practicing_algorithms.tests.sort.exchange
 {
   public sealed class BubbleSortingTests
   {
