@@ -1,6 +1,7 @@
 using System;
 using practicing_algorithms.algorithms.sort.exchange;
 using Xunit;
+using static System.Console;
 
 namespace practicing_algorithms.tests.sort.exchange
 {
@@ -10,6 +11,18 @@ namespace practicing_algorithms.tests.sort.exchange
     public void Test()
     {
       Assert.Throws<NotImplementedException>( () => new OddEvenSorting(new int[0]).Sort() );
+    }
+
+    [Fact]
+    public void EvenNumbersTest()
+    {
+      var expectedEvenNumber = 0;
+      foreach(var evenNumber in new EvenNumbers().GenerateUpTo(10))
+      {
+        WriteLine(evenNumber);
+        Assert.Equal(expectedEvenNumber, evenNumber);
+        expectedEvenNumber += 2;
+      }
     }
   }
 }
