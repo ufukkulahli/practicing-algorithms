@@ -1,20 +1,23 @@
 using System.Collections.Generic;
 
-public sealed class EvenNumbers
+namespace practicing_algorithms.algorithms.sort.exchange
 {
-  int currentEvenNumber = -2;
-
-  public IEnumerable<int> GenerateUpTo(int limit)
+  public sealed class EvenNumbers
   {
-    while(HasNext(limit))
+    int currentEvenNumber = -2;
+
+    public IEnumerable<int> GenerateUpTo(int limit)
     {
-      yield return currentEvenNumber;
+      while(HasNext(limit))
+      {
+        yield return currentEvenNumber;
+      }
     }
-  }
 
-  bool HasNext(int limit)
-  {
-    currentEvenNumber+=2;
-    return currentEvenNumber <= limit;
+    bool HasNext(int limit)
+    {
+      currentEvenNumber+=2;
+      return currentEvenNumber <= limit;
+    }
   }
 }
