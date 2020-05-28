@@ -1,7 +1,6 @@
 using System;
 using practicing_algorithms.algorithms.sort.exchange;
 using Xunit;
-using static System.Console;
 
 namespace practicing_algorithms.tests.sort.exchange
 {
@@ -19,7 +18,7 @@ namespace practicing_algorithms.tests.sort.exchange
       var expectedEvenNumber = 0;
       foreach(var evenNumber in new EvenNumbers().GenerateUpTo(10))
       {
-        WriteLine(evenNumber);
+        evenNumber.WriteLine();
         Assert.Equal(expectedEvenNumber, evenNumber);
         expectedEvenNumber += 2;
       }
