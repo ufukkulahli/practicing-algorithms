@@ -23,5 +23,17 @@ namespace practicing_algorithms.tests.sort.exchange
         expectedEvenNumber += 2;
       }
     }
+
+    [Fact]
+    public void OddNumbersTest()
+    {
+      var expectedOddNumber = 1;
+      foreach(var oddNumber in new OddNumbers().GenerateUpTo(10))
+      {
+        oddNumber.WriteLine();
+        Assert.Equal(expectedOddNumber, oddNumber);
+        expectedOddNumber += 2;
+      }
+    }
   }
 }
