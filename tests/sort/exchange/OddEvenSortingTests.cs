@@ -9,7 +9,12 @@ namespace practicing_algorithms.tests.sort.exchange
     [Fact]
     public void Test()
     {
-      Assert.Throws<NotImplementedException>( () => new OddEvenSorting(new int[0]).Sort() );
+      // Arrange
+      var expectedNumbers = new int[5] {1,2,3,4,5};
+      var actualNumbers   = new int[5] {5,4,3,2,1};
+
+      // Act
+      Assert.Throws<IndexOutOfRangeException>( () => new OddEvenSorting(actualNumbers).Sort() );
     }
 
     [Fact]
