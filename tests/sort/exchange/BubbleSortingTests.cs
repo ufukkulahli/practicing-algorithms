@@ -1,4 +1,3 @@
-using System;
 using practicing_algorithms.algorithms.sort.exchange;
 using Xunit;
 

@@ -4,24 +4,25 @@ namespace practicing_algorithms.algorithms.sort.exchange
 {
   public sealed class BubbleSorting
   {
-    readonly int[] numbers;
-    public BubbleSorting(int[] numbers) => this.numbers = numbers;
+    readonly int[] unorderedNumbers;
+    public BubbleSorting(int[] unorderedNumbers) => this.unorderedNumbers = unorderedNumbers;
 
     public void Sort()
     {
-      for(var outerIndex=0; outerIndex<=numbers.Length-2; outerIndex++)
+      var numbers = new Numbers(unorderedNumbers);
+
+      for(var outerIndex=0; outerIndex<=unorderedNumbers.Length-2; outerIndex++)
       {
-        for(var index=0; index<=numbers.Length-2; index++)
+        for(var index=0; index<=unorderedNumbers.Length-2; index++)
         {
-          var numberAtLeft  = numbers[index];
-          var numberAtRight = numbers[index+1];
+          var numberAtLeft  = unorderedNumbers[index];
+          var numberAtRight = unorderedNumbers[index+1];
 
           Print(outerIndex, index, numberAtLeft, numberAtRight);
 
           if(numberAtLeft > numberAtRight)
           {
-            numbers[index+1] = numberAtLeft;
-            numbers[index]   = numberAtRight;
+            numbers.SwapNumberAndNextAt(index);
             Print();
           }
         }
@@ -30,10 +31,10 @@ namespace practicing_algorithms.algorithms.sort.exchange
 
     void Print(int outerIndex, int index, int numberAtLeft, int numberAtRight)
     {
-      Write("Curr:" + string.Join(',', numbers) + " ");
+      Write("Curr:" + string.Join(',', unorderedNumbers) + " ");
       Write(outerIndex + ":" + index + ":" + (index+1) + "=>");
       Write(numberAtLeft + "," + numberAtRight);
     }
-    void Print() => WriteLine(" New:" + string.Join(',', numbers));
+    void Print() => WriteLine(" New:" + string.Join(',', unorderedNumbers));
   }
 }
