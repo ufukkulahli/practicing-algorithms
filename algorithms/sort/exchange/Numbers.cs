@@ -14,14 +14,14 @@ namespace practicing_algorithms.algorithms.sort.exchange
     {
       foreach(var index in indexes)
       {
-        var leftNumber  = numbers[index];
-        var rightNumber = numbers[index+1];
+        var currentLeftNumber  = numbers[index];
+        var currentRightNumber = numbers[index+1];
 
-        if(leftNumber > rightNumber)
+        if(currentLeftNumber > currentRightNumber)
         {
-          notSortedYet = true;
-          numbers[index]   = rightNumber;
-          numbers[index+1] = leftNumber;
+          notSortedYet     = true;
+          numbers[index]   = currentRightNumber;
+          numbers[index+1] = currentLeftNumber;
         }
       }
       return notSortedYet;
