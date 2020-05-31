@@ -3,24 +3,22 @@ namespace practicing_algorithms.algorithms.sort.exchange
   public sealed class OddEvenSorting
   {
     bool notSortedYet = true;
-    readonly int[] numbers;
+    readonly int[] unorderedNumbers;
 
-    public OddEvenSorting(int[] numbers) => this.numbers = numbers;
+    public OddEvenSorting(int[] unorderedNumbers) => this.unorderedNumbers = unorderedNumbers;
 
     public void Sort()
     {
       while(notSortedYet)
       {
-        notSortedYet = false;
-        var sn = new SortedNumbers(numbers);
+        notSortedYet    = false;
+        var numbers     = new Numbers(unorderedNumbers);
 
-        var oddIndexes = new OddNumbers().GenerateUpTo(numbers.Length-2);
-        var oddIndexSorting = sn;
-        notSortedYet = oddIndexSorting.ByIndexes(oddIndexes);
+        var oddIndexes  = new OddNumbers().GenerateUpTo(unorderedNumbers.Length-2);
+        notSortedYet    = numbers.SortByIndexes(oddIndexes);
 
-        var evenIndexes = new EvenNumbers().GenerateUpTo(numbers.Length-2);
-        var evenIndexSorting = sn;
-        notSortedYet = evenIndexSorting.ByIndexes(evenIndexes);
+        var evenIndexes = new EvenNumbers().GenerateUpTo(unorderedNumbers.Length-2);
+        notSortedYet    = numbers.SortByIndexes(evenIndexes);
       }
     }
   }
