@@ -4,16 +4,16 @@ namespace practicing_algorithms.algorithms.sort.exchange
   {
     bool notSortedYet = true;
     readonly int[] numbers;
+
     public OddEvenSorting(int[] numbers) => this.numbers = numbers;
 
     public void Sort()
     {
-      var oddNumbers = new OddNumbers().GenerateUpTo(numbers.Length-1);
-      var evenNumbers = new EvenNumbers().GenerateUpTo(numbers.Length-1);
-
       while(notSortedYet)
       {
         notSortedYet = false;
+
+        var oddNumbers = new OddNumbers().GenerateUpTo(numbers.Length-2);
 
         foreach(var oddNumber in oddNumbers)
         {
@@ -23,10 +23,12 @@ namespace practicing_algorithms.algorithms.sort.exchange
           if(leftNumber > rightNumber)
           {
             notSortedYet = true;
-            numbers[oddNumber]   = numbers[oddNumber+1];
-            numbers[oddNumber+1] = numbers[oddNumber];
+            numbers[oddNumber]   = rightNumber;
+            numbers[oddNumber+1] = leftNumber;
           }
         }
+
+        var evenNumbers = new EvenNumbers().GenerateUpTo(numbers.Length-2);
 
         foreach(var evenNumber in evenNumbers)
         {
@@ -36,8 +38,8 @@ namespace practicing_algorithms.algorithms.sort.exchange
           if(leftNumber > rightNumber)
           {
             notSortedYet = true;
-            numbers[evenNumber] = numbers[evenNumber+1];
-            numbers[evenNumber+1] = numbers[evenNumber];
+            numbers[evenNumber] = rightNumber;
+            numbers[evenNumber+1] = leftNumber;
           }
         }
       }

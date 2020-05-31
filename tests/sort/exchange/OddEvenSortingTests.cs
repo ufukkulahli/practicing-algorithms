@@ -7,14 +7,17 @@ namespace practicing_algorithms.tests.sort.exchange
   public sealed class OddEvenSortingTests
   {
     [Fact]
-    public void Test()
+    public void SortNumbers()
     {
       // Arrange
       var expectedNumbers = new int[5] {1,2,3,4,5};
       var actualNumbers   = new int[5] {5,4,3,2,1};
 
       // Act
-      Assert.Throws<IndexOutOfRangeException>( () => new OddEvenSorting(actualNumbers).Sort() );
+      new OddEvenSorting(actualNumbers).Sort();
+
+      // Assert
+      Assert.Equal(expectedNumbers, actualNumbers);
     }
 
     [Fact]
@@ -23,7 +26,6 @@ namespace practicing_algorithms.tests.sort.exchange
       var expectedEvenNumber = 0;
       foreach(var evenNumber in new EvenNumbers().GenerateUpTo(10))
       {
-        evenNumber.WriteLine();
         Assert.Equal(expectedEvenNumber, evenNumber);
         expectedEvenNumber += 2;
       }
@@ -35,7 +37,6 @@ namespace practicing_algorithms.tests.sort.exchange
       var expectedOddNumber = 1;
       foreach(var oddNumber in new OddNumbers().GenerateUpTo(10))
       {
-        oddNumber.WriteLine();
         Assert.Equal(expectedOddNumber, oddNumber);
         expectedOddNumber += 2;
       }
