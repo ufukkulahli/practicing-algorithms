@@ -13,35 +13,13 @@ namespace practicing_algorithms.algorithms.sort.exchange
       {
         notSortedYet = false;
 
-        var oddNumbers = new OddNumbers().GenerateUpTo(numbers.Length-2);
+        var oddIndexes = new OddNumbers().GenerateUpTo(numbers.Length-2);
+        var oddIndexSorting = new SortedNumbers(numbers, oddIndexes);
+        notSortedYet = oddIndexSorting.Sort();
 
-        foreach(var oddNumber in oddNumbers)
-        {
-          var leftNumber  = numbers[oddNumber];
-          var rightNumber = numbers[oddNumber+1];
-
-          if(leftNumber > rightNumber)
-          {
-            notSortedYet = true;
-            numbers[oddNumber]   = rightNumber;
-            numbers[oddNumber+1] = leftNumber;
-          }
-        }
-
-        var evenNumbers = new EvenNumbers().GenerateUpTo(numbers.Length-2);
-
-        foreach(var evenNumber in evenNumbers)
-        {
-          var leftNumber = numbers[evenNumber];
-          var rightNumber = numbers[evenNumber+1];
-
-          if(leftNumber > rightNumber)
-          {
-            notSortedYet = true;
-            numbers[evenNumber] = rightNumber;
-            numbers[evenNumber+1] = leftNumber;
-          }
-        }
+        var evenIndexes = new EvenNumbers().GenerateUpTo(numbers.Length-2);
+        var evenIndexSorting = new SortedNumbers(numbers, evenIndexes);
+        notSortedYet = evenIndexSorting.Sort();
       }
     }
   }
