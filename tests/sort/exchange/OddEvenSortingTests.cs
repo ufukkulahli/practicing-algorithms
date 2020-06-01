@@ -24,7 +24,7 @@ namespace practicing_algorithms.tests.sort.exchange
     public void EvenNumbersTest()
     {
       var expectedEvenNumber = 0;
-      foreach(var evenNumber in new EvenNumbers().GenerateUpTo(10))
+      foreach(var evenNumber in new OddEvenNumbers(NumberGeneration.Even).GenerateUpTo(10))
       {
         Assert.Equal(expectedEvenNumber, evenNumber);
         expectedEvenNumber += 2;
@@ -35,7 +35,7 @@ namespace practicing_algorithms.tests.sort.exchange
     public void OddNumbersTest()
     {
       var expectedOddNumber = 1;
-      foreach(var oddNumber in new OddNumbers().GenerateUpTo(10))
+      foreach(var oddNumber in new OddEvenNumbers(NumberGeneration.Odd).GenerateUpTo(10))
       {
         Assert.Equal(expectedOddNumber, oddNumber);
         expectedOddNumber += 2;
