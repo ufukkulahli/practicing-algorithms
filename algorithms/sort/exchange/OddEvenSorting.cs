@@ -14,10 +14,10 @@ namespace practicing_algorithms.algorithms.sort.exchange
         notSortedYet    = false;
         var numbers     = new Numbers(unorderedNumbers);
 
-        var oddIndexes  = new OddNumbers().GenerateUpTo(unorderedNumbers.Length-2);
+        var oddIndexes  = new OddEvenNumbers(NumberGeneration.Odd).GenerateUpTo(unorderedNumbers.Length-2);
         notSortedYet    = numbers.SortByIndexes(oddIndexes);
 
-        var evenIndexes = new EvenNumbers().GenerateUpTo(unorderedNumbers.Length-2);
+        var evenIndexes = new OddEvenNumbers(NumberGeneration.Even).GenerateUpTo(unorderedNumbers.Length-2);
         notSortedYet    = numbers.SortByIndexes(evenIndexes);
       }
     }

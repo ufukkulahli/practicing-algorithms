@@ -6,16 +6,12 @@ namespace practicing_algorithms.algorithms.sort.exchange
 
   public sealed class OddEvenNumbers
   {
-
-    readonly NumberGeneration ng;
     readonly int evenNumberGenerationStartFrom = -2;
     readonly int oddNumberGenerationStartFrom = -1;
     int currentNumber;
 
     public OddEvenNumbers(NumberGeneration ng)
     {
-      this.ng = ng;
-
       if(ng == NumberGeneration.Odd)
       {
         this.currentNumber = oddNumberGenerationStartFrom;
