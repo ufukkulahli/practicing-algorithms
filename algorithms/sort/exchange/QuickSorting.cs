@@ -13,5 +13,20 @@ namespace practicing_algorithms.algorithms.sort.exchange
     {
       throw new NotImplementedException();
     }
+
+    void Sort(int[] numbers, int low, int high)
+    {
+      if(low > high)
+      {
+        return;
+      }
+
+      // TODO: Implement
+      // var partitionIndex = Partition(numbers, low, high);
+      var partitionIndex = 0;
+
+      Sort(numbers, low, partitionIndex-1);
+      Sort(numbers, partitionIndex-1, high);
+    }
   }
 }
