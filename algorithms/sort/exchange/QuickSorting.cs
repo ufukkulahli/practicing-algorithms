@@ -11,12 +11,12 @@ namespace practicing_algorithms.algorithms.sort.exchange
 
     public void Sort()
     {
-      throw new NotImplementedException();
+      Sort(unorderedNumbers, 0, unorderedNumbers.Length-1);
     }
 
     void Sort(int[] numbers, int low, int high)
     {
-      if(low > high)
+      if(low >= high)
       {
         return;
       }
@@ -24,7 +24,7 @@ namespace practicing_algorithms.algorithms.sort.exchange
       var partitionIndex = Partition(numbers, low, high);
 
       Sort(numbers, low, partitionIndex-1);
-      Sort(numbers, partitionIndex-1, high);
+      Sort(numbers, partitionIndex+1, high);
     }
 
     int Partition(int[] array, int low, int high)
