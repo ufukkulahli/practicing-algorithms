@@ -16,7 +16,7 @@ namespace practicing_algorithms.tests.sort.exchange
       new QuickSorting(actualNumbers).Sort();
 
       // Assert
-      Assert.NotEqual(expectedNumbers, actualNumbers);
+      Assert.Equal(expectedNumbers, actualNumbers);
     }
   }
 }

@@ -50,7 +50,7 @@ namespace practicing_algorithms.algorithms.sort.exchange
       var nextLowIndex       = lowIndex+1;
       var nextItemAtLowIndex = array[nextLowIndex];
       array[nextLowIndex]    = array[high];
-      array[high]            = nextLowIndex;
+      array[high]            = nextItemAtLowIndex;
 
       return nextLowIndex;
     }
