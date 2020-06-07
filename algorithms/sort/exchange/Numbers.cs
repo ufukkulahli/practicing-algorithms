@@ -33,5 +33,12 @@ namespace practicing_algorithms.algorithms.sort.exchange
       numbers[index]   = rightNumber;
       numbers[index+1] = leftNumber;
     }
+
+    public void SwapNumbersAtIndexes(int index, int nextIndex)
+    {
+      var currentItemAtIndex = numbers[index];
+      numbers[index]         = numbers[nextIndex];
+      numbers[nextIndex]     = currentItemAtIndex;
+    }
   }
 }

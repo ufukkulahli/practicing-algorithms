@@ -3,8 +3,13 @@ namespace practicing_algorithms.algorithms.sort.exchange
   public sealed class QuickSorting
   {
     readonly int[] unorderedNumbers;
+    readonly Numbers numbers;
 
-    public QuickSorting(int[] unorderedNumbers) => this.unorderedNumbers = unorderedNumbers;
+    public QuickSorting(int[] unorderedNumbers)
+    {
+      this.unorderedNumbers = unorderedNumbers;
+      this.numbers = new Numbers(unorderedNumbers);
+    }
 
     public void Sort()
     {
@@ -40,15 +45,12 @@ namespace practicing_algorithms.algorithms.sort.exchange
 
         lowIndex++;
 
-        var currentItemAtLowIndex  = unorderedNumbers[lowIndex];
-        unorderedNumbers[lowIndex] = unorderedNumbers[index];
-        unorderedNumbers[index]    = currentItemAtLowIndex;
+        numbers.SwapNumbersAtIndexes(lowIndex, index);
       }
 
-      var nextLowIndex               = lowIndex+1;
-      var nextItemAtLowIndex         = unorderedNumbers[nextLowIndex];
-      unorderedNumbers[nextLowIndex] = unorderedNumbers[high];
-      unorderedNumbers[high]         = nextItemAtLowIndex;
+      var nextLowIndex = lowIndex+1;
+
+      numbers.SwapNumbersAtIndexes(nextLowIndex, high);
 
       return nextLowIndex;
     }
