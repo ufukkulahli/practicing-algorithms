@@ -4,7 +4,6 @@ namespace practicing_algorithms.algorithms.sort.exchange
 {
   public sealed class QuickSorting
   {
-    bool notSortedYet = true;
     readonly int[] unorderedNumbers;
 
     public QuickSorting(int[] unorderedNumbers) => this.unorderedNumbers = unorderedNumbers;
