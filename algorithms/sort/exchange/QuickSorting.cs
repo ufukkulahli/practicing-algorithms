@@ -1,5 +1,3 @@
-using System;
-
 namespace practicing_algorithms.algorithms.sort.exchange
 {
   public sealed class QuickSorting
@@ -10,30 +8,30 @@ namespace practicing_algorithms.algorithms.sort.exchange
 
     public void Sort()
     {
-      Sort(unorderedNumbers, 0, unorderedNumbers.Length-1);
+      Sort(0, unorderedNumbers.Length-1);
     }
 
-    void Sort(int[] numbers, int low, int high)
+    void Sort(int low, int high)
     {
       if(low >= high)
       {
         return;
       }
 
-      var partitionIndex = Partition(numbers, low, high);
+      var partitionIndex = Partition(low, high);
 
-      Sort(numbers, low, partitionIndex-1);
-      Sort(numbers, partitionIndex+1, high);
+      Sort(low, partitionIndex-1);
+      Sort(partitionIndex+1, high);
     }
 
-    int Partition(int[] array, int low, int high)
+    int Partition(int low, int high)
     {
-      var pivot    = array[high];
+      var pivot    = unorderedNumbers[high];
       var lowIndex = low-1;
 
       for(var index=low; index<high; index++)
       {
-        var currentItem = array[index];
+        var currentItem = unorderedNumbers[index];
 
         if(currentItem > pivot)
         {
@@ -41,15 +39,16 @@ namespace practicing_algorithms.algorithms.sort.exchange
         }
 
         lowIndex++;
-        var currentItemAtLowIndex = array[lowIndex];
-        array[lowIndex]           = array[index];
-        array[index]              = currentItemAtLowIndex;
+
+        var currentItemAtLowIndex  = unorderedNumbers[lowIndex];
+        unorderedNumbers[lowIndex] = unorderedNumbers[index];
+        unorderedNumbers[index]    = currentItemAtLowIndex;
       }
 
-      var nextLowIndex       = lowIndex+1;
-      var nextItemAtLowIndex = array[nextLowIndex];
-      array[nextLowIndex]    = array[high];
-      array[high]            = nextItemAtLowIndex;
+      var nextLowIndex               = lowIndex+1;
+      var nextItemAtLowIndex         = unorderedNumbers[nextLowIndex];
+      unorderedNumbers[nextLowIndex] = unorderedNumbers[high];
+      unorderedNumbers[high]         = nextItemAtLowIndex;
 
       return nextLowIndex;
     }
