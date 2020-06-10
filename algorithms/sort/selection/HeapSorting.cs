@@ -6,7 +6,7 @@ namespace practicing_algorithms.algorithms.sort.selection
   {
     public void Sort() => throw new NotImplementedException();
     
-    void Heapify(int[] array, int length, int i)
+    void RebuildHeap(int[] array, int length, int i)
     {
         var largest = i;
         var left    = 2 * i + 1;
@@ -26,7 +26,7 @@ namespace practicing_algorithms.algorithms.sort.selection
             array[i]       = array[largest];
             array[largest] = swap;
           
-            Heapify(array, length, largest);
+            RebuildHeap(array, length, largest);
         }
     }
   }
