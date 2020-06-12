@@ -9,8 +9,15 @@ namespace practicing_algorithms.tests.sort.selection
     [Fact]
     public void Test()
     {
-      // Arrange && Act && Assert
-      Assert.Throws<NotImplementedException>( () => new HeapSorting().Sort() );
+      // Arrange
+      var actualNumbers   = new int[5]{5, 4, 3, 2, 1};
+      var expectedNumbers = new int[5]{1, 2, 3, 4, 5};
+      
+      // Act
+      new HeapSorting().Sort(actualNumbers);
+      
+      // Assert
+      Assert.Equal(expectedNumbers, actualNumbers);
     }
   }
 }
