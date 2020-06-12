@@ -6,7 +6,7 @@ namespace practicing_algorithms.algorithms.sort.selection
   {
     public void Sort() => throw new NotImplementedException();
 
-    void Sort(int[] array)
+    public void Sort(int[] array)
     {
       for(var index=FindStartingIndex(array); index>=0; index--)
       {
