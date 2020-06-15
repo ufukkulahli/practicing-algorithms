@@ -40,5 +40,20 @@ namespace practicing_algorithms.algorithms.sort.exchange
       numbers[index]         = numbers[nextIndex];
       numbers[nextIndex]     = currentItemAtIndex;
     }
+
+    public bool IsSorted()
+    {
+      for(var index=0; index<numbers.Length-1; index++)
+      {
+        var currentNumber = numbers[index];
+        var nextNumber    = numbers[index+1];
+
+        if(currentNumber > nextNumber)
+        {
+          return false;
+        }
+      }
+      return true;
+    }
   }
 }
