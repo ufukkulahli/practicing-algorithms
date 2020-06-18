@@ -20,13 +20,13 @@ namespace practicing_algorithms.algorithms.sort.exchange
 
     public void Swap(int index, int nextIndex) => numbers.SwapNumbersAtIndexes(index, nextIndex);
 
-    public int GetRandomIndexFromNumbers() => random.Next(unorderedNumbers.Length - 1);
+    public int GetRandomIndexOfArray() => random.Next(unorderedNumbers.Length - 1);
 
     public void Shuffle()
     {
       for(var index=0; index<=unorderedNumbers.Length-1; index++)
       {
-        Swap(GetRandomIndexFromNumbers(), index);
+        Swap(GetRandomIndexOfArray(), index);
       }
     }
   }

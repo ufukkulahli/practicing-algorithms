@@ -54,7 +54,7 @@ namespace practicing_algorithms.tests.sort.exchange
       var actualNumbers = new int[5]{5,4,3,2,1};
 
       // Act
-      var randomIndex = new BogoSorting(actualNumbers).GetRandomIndexFromNumbers();
+      var randomIndex = new BogoSorting(actualNumbers).GetRandomIndexOfArray();
 
       // Assert
       // TODO
