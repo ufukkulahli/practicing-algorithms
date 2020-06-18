@@ -54,10 +54,13 @@ namespace practicing_algorithms.tests.sort.exchange
       var actualNumbers = new int[5]{5,4,3,2,1};
 
       // Act
-      var randomIndex = new BogoSorting(actualNumbers).GetRandomIndexOfArray();
+      var bogoSorting = new BogoSorting(actualNumbers);
 
       // Assert
-      // TODO
+      for(var i=1; i<=25; i++)
+      {
+        Assert.True(bogoSorting.GetRandomIndexOfArray() <= (actualNumbers.Length-1));
+      }
     }
 
     [Fact]
