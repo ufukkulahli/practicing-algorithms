@@ -1,4 +1,5 @@
 using practicing_algorithms.algorithms.sort.exchange;
+using practicing_algorithms.algorithms;
 using Xunit;
 using System;
 
@@ -59,7 +60,7 @@ namespace practicing_algorithms.tests.sort.exchange
       // Assert
       for(var i=1; i<=25; i++)
       {
-        Assert.True(bogoSorting.GetRandomIndexOfArray() <= (actualNumbers.Length-1));
+        Assert.True(bogoSorting.GetRandomIndexOfArray() <= (actualNumbers.Count()));
       }
     }
 

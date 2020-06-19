@@ -20,7 +20,7 @@ namespace practicing_algorithms.algorithms.sort.selection
         RebuildHeap(array, array.Length, index);
       }
 
-      for(var index=(array.Length-1); index>=0; index--)
+      for(var index=(array.Count()); index>=0; index--)
       {
         var firstItem = array[0];
 

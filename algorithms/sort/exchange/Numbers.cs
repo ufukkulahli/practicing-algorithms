@@ -43,7 +43,7 @@ namespace practicing_algorithms.algorithms.sort.exchange
 
     public bool IsSorted()
     {
-      for(var index=0; index<numbers.Length-1; index++)
+      for(var index=0; index<numbers.Count(); index++)
       {
         var currentNumber = numbers[index];
         var nextNumber    = numbers[index+1];

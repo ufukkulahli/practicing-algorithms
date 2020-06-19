@@ -13,7 +13,7 @@ namespace practicing_algorithms.algorithms.sort.exchange
 
     public void Sort()
     {
-      Sort(0, unorderedNumbers.Length-1);
+      Sort(0, unorderedNumbers.Count());
     }
 
     void Sort(int low, int high)
