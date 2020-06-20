@@ -1,5 +1,3 @@
-using System;
-
 namespace practicing_algorithms.algorithms.sort.selection
 {
   public sealed class HeapSorting
@@ -7,12 +5,12 @@ namespace practicing_algorithms.algorithms.sort.selection
     readonly int[] unorderedNumbers;
 
     public HeapSorting(){}
-    
+
     public HeapSorting(int[] unorderedNumbers)
     {
       this.unorderedNumbers = unorderedNumbers;
     }
-    
+
     public void Sort(int[] array)
     {
       for(var index=FindStartingIndex(array); index>=0; index--)

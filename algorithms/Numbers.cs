@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace practicing_algorithms.algorithms.sort.exchange
+namespace practicing_algorithms.algorithms
 {
   public sealed class Numbers
   {
