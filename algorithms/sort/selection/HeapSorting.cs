@@ -13,7 +13,7 @@ namespace practicing_algorithms.algorithms.sort.selection
     {
       for(var index=FindStartingIndex(unorderedNumbers); index>=0; index--)
       {
-        RebuildHeap(unorderedNumbers, unorderedNumbers.Length, index);
+        RebuildHeap(index);
       }
 
       for(var index=(unorderedNumbers.Count()); index>=0; index--)
@@ -23,23 +23,23 @@ namespace practicing_algorithms.algorithms.sort.selection
         unorderedNumbers[0]     = unorderedNumbers[index];
         unorderedNumbers[index] = firstItem;
 
-        RebuildHeap(unorderedNumbers, index, 0);
+        RebuildHeap(0);
       }
     }
 
     int FindStartingIndex(int[] unorderedNumbers) => (unorderedNumbers.Length/2) - 1;
 
-    void RebuildHeap(int[] unorderedNumbers, int length, int i)
+    void RebuildHeap(int i)
     {
         var largest = i;
         var left    = 2 * i + 1;
         var right   = 2 * i + 2;
 
-        if (left < length && unorderedNumbers[left] > unorderedNumbers[largest])
+        if (left < unorderedNumbers.Length && unorderedNumbers[left] > unorderedNumbers[largest])
         {
             largest = left;
         }
-        if (right < length && unorderedNumbers[right] > unorderedNumbers[largest])
+        if (right < unorderedNumbers.Length && unorderedNumbers[right] > unorderedNumbers[largest])
         {
             largest = right;
         }
@@ -49,7 +49,7 @@ namespace practicing_algorithms.algorithms.sort.selection
             unorderedNumbers[i]       = unorderedNumbers[largest];
             unorderedNumbers[largest] = numberToBeSwapped;
 
-            RebuildHeap(unorderedNumbers, length, largest);
+            RebuildHeap(largest);
         }
     }
   }
