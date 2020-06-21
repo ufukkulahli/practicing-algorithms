@@ -4,54 +4,52 @@ namespace practicing_algorithms.algorithms.sort.selection
   {
     readonly int[] unorderedNumbers;
 
-    public HeapSorting(){}
-
     public HeapSorting(int[] unorderedNumbers)
     {
       this.unorderedNumbers = unorderedNumbers;
     }
 
-    public void Sort(int[] array)
+    public void Sort()
     {
-      for(var index=FindStartingIndex(array); index>=0; index--)
+      for(var index=FindStartingIndex(unorderedNumbers); index>=0; index--)
       {
-        RebuildHeap(array, array.Length, index);
+        RebuildHeap(unorderedNumbers, unorderedNumbers.Length, index);
       }
 
-      for(var index=(array.Count()); index>=0; index--)
+      for(var index=(unorderedNumbers.Count()); index>=0; index--)
       {
-        var firstItem = array[0];
+        var firstItem = unorderedNumbers[0];
 
-        array[0]     = array[index];
-        array[index] = firstItem;
+        unorderedNumbers[0]     = unorderedNumbers[index];
+        unorderedNumbers[index] = firstItem;
 
-        RebuildHeap(array, index, 0);
+        RebuildHeap(unorderedNumbers, index, 0);
       }
     }
 
-    int FindStartingIndex(int[] array) => (array.Length/2) - 1;
+    int FindStartingIndex(int[] unorderedNumbers) => (unorderedNumbers.Length/2) - 1;
 
-    void RebuildHeap(int[] array, int length, int i)
+    void RebuildHeap(int[] unorderedNumbers, int length, int i)
     {
         var largest = i;
         var left    = 2 * i + 1;
         var right   = 2 * i + 2;
 
-        if (left < length && array[left] > array[largest])
+        if (left < length && unorderedNumbers[left] > unorderedNumbers[largest])
         {
             largest = left;
         }
-        if (right < length && array[right] > array[largest])
+        if (right < length && unorderedNumbers[right] > unorderedNumbers[largest])
         {
             largest = right;
         }
         if (largest != i)
         {
-            var swap       = array[i];
-            array[i]       = array[largest];
-            array[largest] = swap;
+            var numberToBeSwapped     = unorderedNumbers[i];
+            unorderedNumbers[i]       = unorderedNumbers[largest];
+            unorderedNumbers[largest] = numberToBeSwapped;
 
-            RebuildHeap(array, length, largest);
+            RebuildHeap(unorderedNumbers, length, largest);
         }
     }
   }

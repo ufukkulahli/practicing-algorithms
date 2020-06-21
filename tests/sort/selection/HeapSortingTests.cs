@@ -13,7 +13,7 @@ namespace practicing_algorithms.tests.sort.selection
       var expectedNumbers = new int[5]{1, 2, 3, 4, 5};
 
       // Act
-      new HeapSorting().Sort(actualNumbers);
+      new HeapSorting(actualNumbers).Sort();
 
       // Assert
       Assert.Equal(expectedNumbers, actualNumbers);
