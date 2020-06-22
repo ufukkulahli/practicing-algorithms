@@ -1,7 +1,7 @@
 using practicing_algorithms.algorithms.sort.exchange;
 using practicing_algorithms.algorithms;
 using Xunit;
-using System;
+using static System.Console;
 
 namespace practicing_algorithms.tests.sort.exchange
 {
@@ -13,8 +13,14 @@ namespace practicing_algorithms.tests.sort.exchange
       // Arrange
       var actualNumbers = new int[5]{5,4,3,2,1};
 
-      // Act && Assert
-      Assert.Throws<NotImplementedException>( () => new BogoSorting(actualNumbers).Sort() );
+      // Act
+      var bogoSorting = new BogoSorting(actualNumbers);
+      bogoSorting.Sort();
+
+      // Assert
+      Assert.Equal(new int[5]{1,2,3,4,5}, actualNumbers);
+      WriteLine();
+      WriteLine("Trial time: " + bogoSorting.TrialTime());
     }
 
     [Fact]
