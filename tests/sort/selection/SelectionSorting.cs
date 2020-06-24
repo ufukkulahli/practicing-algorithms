@@ -17,5 +17,19 @@ namespace practicing_algorithms.tests.sort.selection
       Assert.Throws<NotImplementedException>( () => new SelectionSorting(numbers).Sort() );
       Assert.NotEqual(sortedNumbers, numbers);
     }
+
+    public void FindSmallestIndexTest()
+    {
+      // Arrange
+      var numbers       = new int[5]{5,4,3,2,1};
+
+      // Act
+      var indexIs_Zero_and_smallestNumberIs_1 = new SelectionSorting(numbers).FindSmallestIndex(0);
+      var indexIs_One_and_smallestNumberIs_2 = new SelectionSorting(numbers).FindSmallestIndex(1);
+
+      // Assert
+      Assert.Equal(0, indexIs_Zero_and_smallestNumberIs_1);
+      Assert.Equal(2, indexIs_One_and_smallestNumberIs_2);
+    }
   }
 }
