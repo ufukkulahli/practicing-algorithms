@@ -10,20 +10,18 @@ namespace practicing_algorithms.algorithms.sort.selection
 
     public void Sort() => throw new NotImplementedException();
 
-    int StartFrom(int index) => index+1;
-
-    public int FindSmallestIndex(int indexToStartScanning)
+    public int FindIndexOfSmallestNumberStartingFrom(int startingIndex)
     {
-      var indexOfSmallestNumber = indexToStartScanning;
+      var indexOfSmallestNumber = startingIndex;
 
-      for(var innerIndex=StartFrom(indexToStartScanning);  innerIndex<unorderedNumbers.Length;  innerIndex++)
+      for(var index=startingIndex;  index<unorderedNumbers.Length;  index++)
       {
-        var leftNumber  = unorderedNumbers[indexToStartScanning];
-        var rightNumber = unorderedNumbers[innerIndex];
+        var currentNumber      = unorderedNumbers[index];
+        var lastSmallestNumber = unorderedNumbers[indexOfSmallestNumber];
 
-        if(rightNumber < leftNumber)
+        if(currentNumber < lastSmallestNumber)
         {
-          indexOfSmallestNumber = innerIndex;
+          indexOfSmallestNumber = index;
         }
       }
 

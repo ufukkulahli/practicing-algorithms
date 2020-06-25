@@ -18,18 +18,22 @@ namespace practicing_algorithms.tests.sort.selection
       Assert.NotEqual(sortedNumbers, numbers);
     }
 
-    public void FindSmallestIndexTest()
+    [Fact]
+    public void FindIndexOfSmallestNumberTest()
     {
       // Arrange
-      var numbers       = new int[5]{5,4,3,2,1};
+      var numbers = new int[5]{5,4,0,2,1};
 
       // Act
-      var indexIs_Zero_and_smallestNumberIs_1 = new SelectionSorting(numbers).FindSmallestIndex(0);
-      var indexIs_One_and_smallestNumberIs_2 = new SelectionSorting(numbers).FindSmallestIndex(1);
+      var selectionSorting                       = new SelectionSorting(numbers);
+      var smallestNumberIsZeroAndIndexIsTwo      = selectionSorting.FindIndexOfSmallestNumberStartingFrom(0);
+      var smallestNumberIsStillZeroAndIndexIsTwo = selectionSorting.FindIndexOfSmallestNumberStartingFrom(1);
+      var smallestNumberIsOneAndIndexIsFour      = selectionSorting.FindIndexOfSmallestNumberStartingFrom(3);
 
       // Assert
-      Assert.Equal(0, indexIs_Zero_and_smallestNumberIs_1);
-      Assert.Equal(2, indexIs_One_and_smallestNumberIs_2);
+      Assert.Equal(2, smallestNumberIsZeroAndIndexIsTwo);
+      Assert.Equal(2, smallestNumberIsStillZeroAndIndexIsTwo);
+      Assert.Equal(4, smallestNumberIsOneAndIndexIsFour);
     }
   }
 }
