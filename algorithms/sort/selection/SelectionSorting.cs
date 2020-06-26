@@ -1,14 +1,24 @@
-using System;
-
 namespace practicing_algorithms.algorithms.sort.selection
 {
   public sealed class SelectionSorting
   {
     readonly int[] unorderedNumbers;
+    readonly Numbers numbers;
 
-    public SelectionSorting(int[] unorderedNumbers) => this.unorderedNumbers = unorderedNumbers;
+    public SelectionSorting(int[] unorderedNumbers)
+    {
+      this.unorderedNumbers = unorderedNumbers;
+      this.numbers = new Numbers(unorderedNumbers);
+    }
 
-    public void Sort() => throw new NotImplementedException();
+    public void Sort()
+    {
+      for(var index=0;  index<unorderedNumbers.Count();  index++)
+      {
+        var indexOfSmallestNumber = FindIndexOfSmallestNumberStartingFrom(index);
+        numbers.SwapNumbersAtIndexes(indexOfSmallestNumber, index);
+      }
+    }
 
     public int FindIndexOfSmallestNumberStartingFrom(int startingIndex)
     {
