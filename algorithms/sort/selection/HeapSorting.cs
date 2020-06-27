@@ -32,24 +32,24 @@ namespace practicing_algorithms.algorithms.sort.selection
 
     public int FindStartingIndex() => (unorderedNumbers.Length/2) - 1;
 
-    void RebuildHeap(int length, int i)
+    void RebuildHeap(int sizeOfHeap, int indexOfNode)
     {
-      var largest = i;
-      var left    = 2 * i + 1;
-      var right   = 2 * i + 2;
+      var indexOfParentNode     = indexOfNode;
+      var indexOfLeftChildNode  = 2 * indexOfNode + 1;
+      var indexOfRightChildNode = 2 * indexOfNode + 2;
 
-      if (left < length && unorderedNumbers[left] > unorderedNumbers[largest])
+      if (indexOfLeftChildNode < sizeOfHeap && unorderedNumbers[indexOfLeftChildNode] > unorderedNumbers[indexOfParentNode])
       {
-        largest = left;
+        indexOfParentNode = indexOfLeftChildNode;
       }
-      if (right < length && unorderedNumbers[right] > unorderedNumbers[largest])
+      if (indexOfRightChildNode < sizeOfHeap && unorderedNumbers[indexOfRightChildNode] > unorderedNumbers[indexOfParentNode])
       {
-        largest = right;
+        indexOfParentNode = indexOfRightChildNode;
       }
-      if (largest != i)
+      if (indexOfParentNode != indexOfNode)
       {
-        numbers.SwapNumbersAtIndexes(i, largest);
-        RebuildHeap(length, largest);
+        numbers.SwapNumbersAtIndexes(indexOfNode, indexOfParentNode);
+        RebuildHeap(sizeOfHeap, indexOfParentNode);
       }
     }
   }
