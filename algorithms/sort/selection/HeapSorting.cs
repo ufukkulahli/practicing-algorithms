@@ -24,13 +24,13 @@ namespace practicing_algorithms.algorithms.sort.selection
 
     public void RearrangeGivenArray()
     {
-      for(var index=FindStartingIndex(unorderedNumbers); index>=0; index--)
+      for(var index=FindStartingIndex(); index>=0; index--)
       {
         RebuildHeap(unorderedNumbers.Length, index);
       }
     }
 
-    int FindStartingIndex(int[] unorderedNumbers) => (unorderedNumbers.Length/2) - 1;
+    int FindStartingIndex() => (unorderedNumbers.Length/2) - 1;
 
     void RebuildHeap(int length, int i)
     {
