@@ -18,5 +18,18 @@ namespace practicing_algorithms.tests.sort.selection
       // Assert
       Assert.Equal(expectedNumbers, actualNumbers);
     }
+
+    [Fact]
+    public void FindStartingIndexTest()
+    {
+      // Arrange
+      var numbers = new int[6]{1,2,3,4,5,6};
+
+      // Act
+      var startingIndex = new HeapSorting(numbers).FindStartingIndex();
+
+      // Assert
+      Assert.Equal(2, startingIndex);
+    }
   }
 }

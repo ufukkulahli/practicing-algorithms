@@ -30,7 +30,7 @@ namespace practicing_algorithms.algorithms.sort.selection
       }
     }
 
-    int FindStartingIndex() => (unorderedNumbers.Length/2) - 1;
+    public int FindStartingIndex() => (unorderedNumbers.Length/2) - 1;
 
     void RebuildHeap(int length, int i)
     {
