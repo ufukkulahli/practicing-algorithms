@@ -13,15 +13,20 @@ namespace practicing_algorithms.algorithms.sort.selection
 
     public void Sort()
     {
-      for(var index=FindStartingIndex(unorderedNumbers); index>=0; index--)
-      {
-        RebuildHeap(unorderedNumbers.Length, index);
-      }
+      RearrangeGivenArray();
 
       for(var index=(unorderedNumbers.Count()); index>=0; index--)
       {
         numbers.SwapNumbersAtIndexes(0, index);
         RebuildHeap(index, 0);
+      }
+    }
+
+    public void RearrangeGivenArray()
+    {
+      for(var index=FindStartingIndex(unorderedNumbers); index>=0; index--)
+      {
+        RebuildHeap(unorderedNumbers.Length, index);
       }
     }
 
