@@ -32,7 +32,8 @@ namespace practicing_algorithms.algorithms.sort.selection
 
     public int FindStartingIndex() => (unorderedNumbers.Length/2) - 1;
 
-    void RebuildHeap(int sizeOfHeap, int indexOfNode)
+    // TODO: Write test
+    public void RebuildHeap(int sizeOfHeap, int indexOfNode)
     {
       var indexOfParentNode     = indexOfNode;
       var indexOfLeftChildNode  = 2 * indexOfNode + 1;
