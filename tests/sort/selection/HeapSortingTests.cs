@@ -40,10 +40,10 @@ namespace practicing_algorithms.tests.sort.selection
       var numbers = new int[3]{2, 4, 6};
 
       // Act
-      new HeapSorting(numbers).RebuildHeap(numbers.Count(), 0);
+      new HeapSorting(numbers).RebuildHeap(numbers.Length, 0);
 
       // Assert
-      Assert.Equal(new int[3]{4, 2, 6}, numbers);
+      Assert.Equal(new int[3]{6, 4, 2}, numbers);
     }
   }
 }
