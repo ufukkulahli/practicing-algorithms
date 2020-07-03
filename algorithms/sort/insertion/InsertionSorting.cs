@@ -11,7 +11,21 @@ namespace practicing_algorithms.algorithms.sort.insertion
 
     public void Sort()
     {
-      throw new System.NotImplementedException();
+      for(var index=1;  index<unorderedNumbers.Length;  ++index)
+      {
+        var indexOfLeftNumber = index-1;
+
+        var rightNumber = unorderedNumbers[index];
+        var leftNumber  = unorderedNumbers[indexOfLeftNumber];
+
+        while (indexOfLeftNumber >=0  &&  (leftNumber > rightNumber))
+        {
+          unorderedNumbers[indexOfLeftNumber+1] = unorderedNumbers[indexOfLeftNumber];
+          indexOfLeftNumber = indexOfLeftNumber-1;
+        }
+
+        unorderedNumbers[indexOfLeftNumber+1] = rightNumber;
+      }
     }
   }
 }
