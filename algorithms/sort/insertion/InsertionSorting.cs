@@ -20,12 +20,17 @@ namespace practicing_algorithms.algorithms.sort.insertion
 
         while (indexOfLeftNumber >=0  &&  (leftNumber > rightNumber))
         {
-          unorderedNumbers[indexOfLeftNumber+1] = unorderedNumbers[indexOfLeftNumber];
+          UpdateNumberAtIndex(indexOfLeftNumber+1 , indexOfLeftNumber);
           indexOfLeftNumber = indexOfLeftNumber-1;
         }
 
         unorderedNumbers[indexOfLeftNumber+1] = rightNumber;
       }
+    }
+
+    public void UpdateNumberAtIndex(int index, int nextIndex)
+    {
+      unorderedNumbers[index] = unorderedNumbers[nextIndex];
     }
   }
 }
