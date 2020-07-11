@@ -8,7 +8,15 @@ namespace practicing_algorithms.tests.sort.exchange
     [Fact]
     public void Test()
     {
-      Assert.Throws<System.NotImplementedException>( () => new CombSorting( new int[3] {3,2,1} ).Sort() );
+      // Arrange
+      var actualNumbers = new int[5]{5,4,3,2,1};
+      var expectedNumbers = new int[5]{1,2,3,4,5};
+
+      // Act
+      new CombSorting(actualNumbers).Sort();
+
+      // Assert
+      Assert.Equal(expectedNumbers, actualNumbers);
     }
   }
 }

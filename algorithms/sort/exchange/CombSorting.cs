@@ -15,11 +15,6 @@ namespace practicing_algorithms.algorithms.sort.exchange
 
     public void Sort()
     {
-      throw new System.NotImplementedException();
-    }
-
-    public void Sort(int[] unorderedNumbers)
-    {
       while (gapSize != 1  ||  swappedNumbers == true)
       {
         gapSize = FindGapSize(gapSize);
