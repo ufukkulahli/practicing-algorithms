@@ -28,8 +28,9 @@ namespace practicing_algorithms.algorithms.sort.exchange
 
           if(leftNumber > rightNumber)
           {
-            unorderedNumbers[index] = rightNumber;
-            unorderedNumbers[index+gapSize] = leftNumber;
+          //unorderedNumbers[index] = rightNumber;
+          //unorderedNumbers[index+gapSize] = leftNumber;
+            SwapNumbers(index+gapSize, index);
 
             swappedNumbers = true;
           }
@@ -47,6 +48,13 @@ namespace practicing_algorithms.algorithms.sort.exchange
       }
 
       return newGapSize;
+    }
+
+    void SwapNumbers(int indexOfRightNumber, int indexOfLeftNumber)
+    {
+      var leftNumber                       = unorderedNumbers[indexOfLeftNumber];
+      unorderedNumbers[indexOfLeftNumber]  = unorderedNumbers[indexOfRightNumber];
+      unorderedNumbers[indexOfRightNumber] = leftNumber;
     }
   }
 }
