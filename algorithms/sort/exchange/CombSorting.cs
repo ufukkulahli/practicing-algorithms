@@ -4,43 +4,48 @@ namespace practicing_algorithms.algorithms.sort.exchange
   {
     readonly int[] unorderedNumbers;
     int gapSize;
-    bool swappedNumbers;
+    bool completedSwappingNumbers;
 
     public CombSorting(int[] unorderedNumbers)
     {
       this.unorderedNumbers = unorderedNumbers;
       this.gapSize          = unorderedNumbers.Length;
-      this.swappedNumbers   = true;
+      this.completedSwappingNumbers   = true;
     }
 
     public void Sort()
     {
-      while (gapSize != 1  ||  swappedNumbers == true)
+      while (NotSortedYet())
       {
-        gapSize = FindGapSize(gapSize);
+        this.gapSize = FindGapSize();
 
-        swappedNumbers = false;
+        completedSwappingNumbers = false;
 
-        for (var index=0;  index<unorderedNumbers.Length-gapSize;  index++)
+        IterateNumbersByGapSize();
+      }
+    }
+
+    public void IterateNumbersByGapSize()
+    {
+      for (var index=0;  index<unorderedNumbers.Length-gapSize;  index++)
+      {
+        var leftNumber = unorderedNumbers[index];
+        var rightNumber= unorderedNumbers[index+gapSize];
+
+        if(leftNumber > rightNumber)
         {
-          var leftNumber = unorderedNumbers[index];
-          var rightNumber= unorderedNumbers[index+gapSize];
+          SwapNumbers(index+gapSize, index);
 
-          if(leftNumber > rightNumber)
-          {
-          //unorderedNumbers[index] = rightNumber;
-          //unorderedNumbers[index+gapSize] = leftNumber;
-            SwapNumbers(index+gapSize, index);
-
-            swappedNumbers = true;
-          }
+          completedSwappingNumbers = true;
         }
       }
     }
 
-    public int FindGapSize(int currentGapSize)
+    public bool NotSortedYet() => gapSize != 1  ||  completedSwappingNumbers == true;
+
+    public int FindGapSize()
     {
-      var newGapSize = (currentGapSize * 10) / 13;
+      var newGapSize = (this.gapSize * 10) / 13;
 
       if (newGapSize < 1)
       {
