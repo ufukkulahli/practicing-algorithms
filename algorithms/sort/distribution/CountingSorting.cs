@@ -1,10 +1,10 @@
 namespace practicing_algorithms.algorithms.sort.distribution
 {
-  public sealed class DistributionSorting
+  public sealed class CountingSorting
   {
     readonly int[] unorderedNumbers;
 
-    public DistributionSorting(int[] unorderedNumbers)
+    public CountingSorting(int[] unorderedNumbers)
     {
       this.unorderedNumbers = unorderedNumbers;
     }

@@ -3,7 +3,7 @@ using practicing_algorithms.algorithms.sort.distribution;
 
 namespace practicing_algorithms.tests.sort.exchange
 {
-  public class DistributionSortingTests
+  public class CountingSortingTests
   {
     [Fact]
     public void Test()
@@ -16,7 +16,7 @@ namespace practicing_algorithms.tests.sort.exchange
       // TODO
 
       // Assert
-      Assert.Throws<System.NotImplementedException>( () => new DistributionSorting(actualNumbers).Sort() );
+      Assert.Throws<System.NotImplementedException>( () => new CountingSorting(actualNumbers).Sort() );
     }
   }
 }
