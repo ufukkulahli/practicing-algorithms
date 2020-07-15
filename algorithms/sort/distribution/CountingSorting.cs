@@ -13,5 +13,22 @@ namespace practicing_algorithms.algorithms.sort.distribution
     {
       throw new System.NotImplementedException();
     }
+
+    public int FindBiggestNumber()
+    {
+      var biggestNumber = unorderedNumbers[0];
+
+      for (var index=1;  index<unorderedNumbers.Length;  index++)
+      {
+        var currentNumer = unorderedNumbers[index];
+
+        if(currentNumer > biggestNumber)
+        {
+          biggestNumber = currentNumer;
+        }
+      }
+
+      return biggestNumber;
+    }
   }
 }
