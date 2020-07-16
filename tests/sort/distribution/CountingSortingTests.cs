@@ -18,6 +18,19 @@ namespace practicing_algorithms.tests.sort.exchange
       // Assert
       Assert.Throws<System.NotImplementedException>( () => new CountingSorting(actualNumbers).Sort() );
     }
+
+  [Fact]
+  public void FindBiggestNumberTest()
+  {
+    // Arrange
+    var numbers = new int[5]{5,4,3,2,1};
+
+    // Act
+    var biggestNumber = new CountingSorting(numbers).FindBiggestNumber();
+
+    // Assert
+    Assert.Equal(5, biggestNumber);
+  }
   }
 }
 
