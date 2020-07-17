@@ -9,28 +9,41 @@ namespace practicing_algorithms.tests.sort.exchange
     public void Test()
     {
       // Arrange
-      var actualNumbers = new int[5]{5,4,3,2,1};
-      var expectedNumbers = new int[5]{1,2,3,4,5};
+      var actualNumbers = new int[5] { 5, 4, 3, 2, 1 };
+      var expectedNumbers = new int[5] { 1, 2, 3, 4, 5 };
 
       // Act
       // TODO
 
       // Assert
-      Assert.Throws<System.NotImplementedException>( () => new CountingSorting(actualNumbers).Sort() );
+      Assert.Throws<System.NotImplementedException>(() => new CountingSorting(actualNumbers).Sort());
     }
 
-  [Fact]
-  public void FindBiggestNumberTest()
-  {
-    // Arrange
-    var numbers = new int[5]{5,4,3,2,1};
+    [Fact]
+    public void FindBiggestNumberTest()
+    {
+      // Arrange
+      var numbers = new int[5] { 5, 4, 3, 2, 1 };
 
-    // Act
-    var biggestNumber = new CountingSorting(numbers).FindBiggestNumber();
+      // Act
+      var biggestNumber = new CountingSorting(numbers).FindBiggestNumber();
 
-    // Assert
-    Assert.Equal(5, biggestNumber);
-  }
+      // Assert
+      Assert.Equal(5, biggestNumber);
+    }
+
+    [Fact]
+    public void InitializeCountArrayToZeroTest()
+    {
+      // Arrange
+      var countArray = new int[5]{0,0,0,0,0};
+
+      // Act
+      var actual = new CountingSorting(new int[0]).InitializeCountArrayToZeros(5);
+
+      // Assert
+      Assert.Equal(countArray, actual);
+    }
   }
 }
 

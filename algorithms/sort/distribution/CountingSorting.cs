@@ -30,5 +30,17 @@ namespace practicing_algorithms.algorithms.sort.distribution
 
       return biggestNumber;
     }
+
+    public int[] InitializeCountArrayToZeros(int length)
+    {
+      var countArray = new int[length];
+
+      for(var index=0; index<length; ++index)
+      {
+        countArray[index]=0;
+      }
+
+      return countArray;
+    }
   }
 }
