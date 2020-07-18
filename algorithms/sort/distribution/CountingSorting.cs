@@ -42,5 +42,14 @@ namespace practicing_algorithms.algorithms.sort.distribution
 
       return countArray;
     }
+
+    public void FindOccurenceOfEachNumber(int[] countArray)
+    {
+      for(var index=0; index<unorderedNumbers.Length; index++)
+      {
+        var currentNumber = unorderedNumbers[index];
+        countArray[currentNumber]++;
+      }
+    }
   }
 }

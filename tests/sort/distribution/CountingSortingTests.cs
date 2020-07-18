@@ -44,6 +44,21 @@ namespace practicing_algorithms.tests.sort.exchange
       // Assert
       Assert.Equal(countArray, actual);
     }
+
+    [Fact]
+    public void StoreCountOfEachNumberTest()
+    {
+      // Arrange
+      var numbers = new int[5]{1,1,2,2,3};
+      var biggestNumber = new CountingSorting(numbers).FindBiggestNumber();
+      var countArray = new int[biggestNumber+1];
+
+      // Act
+      new CountingSorting(numbers).FindOccurenceOfEachNumber(countArray);
+
+      // Assert
+      Assert.Equal(new int[4]{0,2,2,1},  countArray);
+    }
   }
 }
 
