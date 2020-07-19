@@ -50,6 +50,14 @@ namespace practicing_algorithms.algorithms.sort.distribution
         var currentNumber = unorderedNumbers[index];
         countArray[currentNumber]++;
       }
+
+    }
+    public void FindCumulativeCountOfEachOccurence(int[] countArray, int biggestNumber)
+    {
+      for(var index=1; index<=biggestNumber; index++)
+      {
+        countArray[index] += countArray[index-1];
+      }
     }
   }
 }

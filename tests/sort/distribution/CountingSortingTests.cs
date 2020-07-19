@@ -59,6 +59,22 @@ namespace practicing_algorithms.tests.sort.exchange
       // Assert
       Assert.Equal(new int[4]{0,2,2,1},  countArray);
     }
+
+    [Fact]
+    public void FindCumulativeCountOfEachOccurenceTest()
+    {
+      // Arrange
+      var numbers = new int[5]{1,1,2,2,3};
+      var biggestNumber = new CountingSorting(numbers).FindBiggestNumber();
+      var occurences = new int[biggestNumber+1];
+      new CountingSorting(numbers).FindOccurenceOfEachNumber(occurences);
+
+      // Act
+      new CountingSorting(new int[0]).FindCumulativeCountOfEachOccurence(occurences, biggestNumber);
+
+      // Assert
+      Assert.Equal(new int[4]{0,2,4,5}, occurences);
+    }
   }
 }
 
