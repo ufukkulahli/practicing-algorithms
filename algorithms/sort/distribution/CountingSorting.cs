@@ -52,12 +52,29 @@ namespace practicing_algorithms.algorithms.sort.distribution
       }
 
     }
+
     public void FindCumulativeCountOfEachOccurence(int[] countArray, int biggestNumber)
     {
       for(var index=1; index<=biggestNumber; index++)
       {
         countArray[index] += countArray[index-1];
       }
+    }
+
+    public int[] BuildOutput(int[] occurences)
+    {
+      var output = new int[unorderedNumbers.Length+1];
+
+      for(var index=unorderedNumbers.Count();  index>=0;  index--)
+      {
+        var currentNumber  = unorderedNumbers[index];
+        var occurence      = occurences[currentNumber - 1];
+        output[occurence]  = currentNumber;
+
+        occurences[currentNumber]--;
+      }
+
+      return output;
     }
   }
 }

@@ -75,6 +75,22 @@ namespace practicing_algorithms.tests.sort.exchange
       // Assert
       Assert.Equal(new int[4]{0,2,4,5}, occurences);
     }
+
+    [Fact]
+    public void BuildOutputTest()
+    {
+      var numbers = new int[5]{1,1,2,2,3};
+      var biggestNumber = new CountingSorting(numbers).FindBiggestNumber();
+      var occurences = new int[biggestNumber+1];
+      var countingSorting = new CountingSorting(numbers);
+      countingSorting.FindOccurenceOfEachNumber(occurences);
+
+      // Act
+      var actual = countingSorting.BuildOutput(occurences);
+
+      // Assert
+      Assert.Equal(new int[6]{1,0,2,0,0,0}, actual);
+    }
   }
 }
 
