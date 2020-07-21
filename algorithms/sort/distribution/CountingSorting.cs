@@ -76,5 +76,13 @@ namespace practicing_algorithms.algorithms.sort.distribution
 
       return output;
     }
+
+    public void FinalizeSorting(int[] output)
+    {
+      for(var index=0;  index<unorderedNumbers.Length;  index++)
+      {
+        unorderedNumbers[index] = output[index];
+      }
+    }
   }
 }

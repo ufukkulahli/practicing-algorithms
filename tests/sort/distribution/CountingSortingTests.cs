@@ -91,6 +91,25 @@ namespace practicing_algorithms.tests.sort.exchange
       // Assert
       Assert.Equal(new int[6]{1,0,2,0,0,0}, actual);
     }
+
+    [Fact]
+    public void FinalizeSortingTest()
+    {
+      var numbers = new int[5] { 5, 4, 3, 2, 1 };
+      var expectedNumbers = new int[5] { 1, 2, 3, 4, 5 };
+      var countingSorting = new CountingSorting(numbers);
+
+      var biggestNumber = countingSorting.FindBiggestNumber();
+      var occurences = new int[biggestNumber + 1];
+      countingSorting.FindOccurenceOfEachNumber(occurences);
+      var output = countingSorting.BuildOutput(occurences);
+
+      // Act
+      countingSorting.FinalizeSorting(output);
+
+      // Assert
+      Assert.NotEqual(new int[5] {1,2,3,4,5}, numbers);
+    }
   }
 }
 
