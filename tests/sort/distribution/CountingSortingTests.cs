@@ -89,7 +89,7 @@ namespace practicing_algorithms.tests.sort.exchange
       var actual = countingSorting.BuildOutput(occurences);
 
       // Assert
-      Assert.Equal(new int[6]{1,0,2,0,0,0}, actual);
+      Assert.Equal(new int[6]{1,1,0,0,0,0}, actual);
     }
 
     [Fact]

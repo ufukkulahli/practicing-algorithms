@@ -67,9 +67,9 @@ namespace practicing_algorithms.algorithms.sort.distribution
 
       for(var index=unorderedNumbers.Count();  index>=0;  index--)
       {
-        var currentNumber  = unorderedNumbers[index];
-        var occurence      = occurences[currentNumber - 1];
-        output[occurence]  = currentNumber;
+        var currentNumber                  = unorderedNumbers[index];
+        var occurenceOfCurrentNumber       = occurences[currentNumber];
+        output[occurenceOfCurrentNumber-1] = currentNumber;
 
         occurences[currentNumber]--;
       }
