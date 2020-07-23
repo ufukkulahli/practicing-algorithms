@@ -102,13 +102,14 @@ namespace practicing_algorithms.tests.sort.exchange
       var biggestNumber = countingSorting.FindBiggestNumber();
       var occurences = new int[biggestNumber + 1];
       countingSorting.FindOccurenceOfEachNumber(occurences);
+      countingSorting.FindCumulativeCountOfEachOccurence(occurences, biggestNumber);
       var output = countingSorting.BuildOutput(occurences);
 
       // Act
       countingSorting.FinalizeSorting(output);
 
       // Assert
-      Assert.NotEqual(new int[5] {1,2,3,4,5}, numbers);
+      Assert.Equal(new int[5] {1,2,3,4,5}, numbers);
     }
   }
 }
