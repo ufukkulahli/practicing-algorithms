@@ -11,7 +11,12 @@ namespace practicing_algorithms.algorithms.sort.distribution
 
     public void Sort()
     {
-      throw new System.NotImplementedException();
+      var biggestNumber = this.FindBiggestNumber();
+      var occurences = new int[biggestNumber + 1];
+      this.FindOccurenceOfEachNumber(occurences);
+      this.FindCumulativeCountOfEachOccurence(occurences, biggestNumber);
+      var output = this.BuildOutput(occurences);
+      this.FinalizeSorting(output);
     }
 
     public int FindBiggestNumber()

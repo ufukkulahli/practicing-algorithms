@@ -13,10 +13,10 @@ namespace practicing_algorithms.tests.sort.exchange
       var expectedNumbers = new int[5] { 1, 2, 3, 4, 5 };
 
       // Act
-      // TODO
+      new CountingSorting(actualNumbers).Sort();
 
       // Assert
-      Assert.Throws<System.NotImplementedException>(() => new CountingSorting(actualNumbers).Sort());
+      Assert.Equal(expectedNumbers, actualNumbers);
     }
 
     [Fact]
