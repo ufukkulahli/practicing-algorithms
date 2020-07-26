@@ -1,10 +1,10 @@
 namespace practicing_algorithms.algorithms.sort.exchange
 {
-  public sealed class CoctailSorting
+  public sealed class CocktailSorting
   {
     readonly int[] unorderedNumbers;
 
-    public CoctailSorting(int[] unorderedNumbers) => this.unorderedNumbers = unorderedNumbers;
+    public CocktailSorting(int[] unorderedNumbers) => this.unorderedNumbers = unorderedNumbers;
 
     public void Sort()
     {
