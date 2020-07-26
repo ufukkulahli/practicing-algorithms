@@ -10,5 +10,19 @@ namespace practicing_algorithms.tests.sort.exchange
     {
       Assert.Throws<System.NotImplementedException>( () => new CocktailSorting(new int[0]).Sort() );
     }
+
+    [Fact]
+    public void IterateNumbersTest()
+    {
+      // Arrange
+      var unorderedNumbers = new int[5]{5,4,3,2,1};
+      var expectedNumbers = new int[5]{1,2,3,4,5};
+
+      // Act
+      new CocktailSorting(unorderedNumbers).IterateNumbers();
+
+      // Assert
+      Assert.NotEqual(expectedNumbers, unorderedNumbers);
+    }
   }
 }
