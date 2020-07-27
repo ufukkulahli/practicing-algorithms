@@ -3,15 +3,20 @@ namespace practicing_algorithms.algorithms.sort.exchange
   public sealed class CocktailSorting
   {
     readonly int[] unorderedNumbers;
+    readonly Numbers numbers;
 
-    public CocktailSorting(int[] unorderedNumbers) => this.unorderedNumbers = unorderedNumbers;
+    public CocktailSorting(int[] unorderedNumbers)
+    {
+      this.unorderedNumbers = unorderedNumbers;
+      this.numbers = new Numbers(unorderedNumbers);
+    }
 
     public void Sort()
     {
       throw new System.NotImplementedException();
     }
 
-    public void IterateNumbers()
+    public void IterateAndSwapNumbersIfNeed()
     {
       for(var index=0;  index<unorderedNumbers.Count();  index++)
       {
@@ -20,7 +25,7 @@ namespace practicing_algorithms.algorithms.sort.exchange
 
         if(leftNumber>rightNumber)
         {
-          // TODO: SWAP NUMBERS
+          this.numbers.SwapNumberAndNextAt(index);
         }
       }
     }
