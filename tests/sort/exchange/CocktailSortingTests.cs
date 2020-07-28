@@ -16,13 +16,27 @@ namespace practicing_algorithms.tests.sort.exchange
     {
       // Arrange
       var unorderedNumbers = new int[5]{5,4,3,2,1};
-      var expectedNumbers = new int[5]{4,3,2,1,5};
 
       // Act
-      new CocktailSorting(unorderedNumbers).IterateAndSwapNumbersIfNeed();
+      var cocktailSorting = new CocktailSorting(unorderedNumbers);
 
-      // Assert
-      Assert.Equal(expectedNumbers, unorderedNumbers);
+      // ASSERT
+
+      // First pass
+      cocktailSorting.IterateAndSwapNumbersIfNeed();
+      Assert.Equal(new int[5] { 4, 3, 2, 1, 5 }, unorderedNumbers);
+
+      // Second pass
+      cocktailSorting.IterateAndSwapNumbersIfNeed();
+      Assert.Equal(new int[5]{3,2,1,4,5}, unorderedNumbers);
+
+      // Third pass
+      cocktailSorting.IterateAndSwapNumbersIfNeed();
+      Assert.Equal(new int[5]{2,1,3,4,5}, unorderedNumbers);
+
+      // Fourth pass
+      cocktailSorting.IterateAndSwapNumbersIfNeed();
+      Assert.Equal(new int[5]{1,2,3,4,5}, unorderedNumbers);
     }
   }
 }
