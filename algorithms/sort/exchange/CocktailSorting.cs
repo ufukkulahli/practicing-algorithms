@@ -29,5 +29,19 @@ namespace practicing_algorithms.algorithms.sort.exchange
         }
       }
     }
+
+    public void IterateReverseAndSwapNumbersIfNeed(int start, int end)
+    {
+      for(var index=start;  index>=end;  index++)
+      {
+        var leftNumber = unorderedNumbers[index];
+        var rightNumber = unorderedNumbers[index+1];
+
+        if(leftNumber > rightNumber)
+        {
+          this.numbers.SwapNumberAndNextAt(index);
+        }
+      }
+    }
   }
 }
