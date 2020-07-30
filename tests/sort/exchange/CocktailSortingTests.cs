@@ -38,5 +38,33 @@ namespace practicing_algorithms.tests.sort.exchange
       cocktailSorting.IterateAndSwapNumbersIfNeed();
       Assert.Equal(new int[5]{1,2,3,4,5}, unorderedNumbers);
     }
+
+    [Fact]
+    public void IterateNumbersReversedTest()
+    {
+      // Arrange
+      var unorderedNumbers = new int[5]{5,4,3,2,1};
+
+      // Act
+      var cocktailSorting = new CocktailSorting(unorderedNumbers);
+
+      // ASSERT
+
+      // First pass
+      cocktailSorting.IterateReverseAndSwapNumbersIfNeed(3,0);
+      Assert.Equal(new int[5] {1, 5, 4, 3, 2}, unorderedNumbers);
+
+      // Second pass
+      cocktailSorting.IterateReverseAndSwapNumbersIfNeed(3,0);
+      Assert.Equal(new int[5] {1, 2, 5, 4, 3}, unorderedNumbers);
+
+      // Third pass
+      cocktailSorting.IterateReverseAndSwapNumbersIfNeed(3,0);
+      Assert.Equal(new int[5] {1, 2, 3, 5, 4}, unorderedNumbers);
+
+      // Fourth pass
+      cocktailSorting.IterateReverseAndSwapNumbersIfNeed(3,0);
+      Assert.Equal(new int[5] {1, 2, 3, 4, 5}, unorderedNumbers);
+    }
   }
 }
