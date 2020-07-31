@@ -4,16 +4,32 @@ namespace practicing_algorithms.algorithms.sort.exchange
   {
     readonly int[] unorderedNumbers;
     readonly Numbers numbers;
+    bool shouldContinueSorting = true;
+    int end = 0;
+    int start = 0;
 
     public CocktailSorting(int[] unorderedNumbers)
     {
       this.unorderedNumbers = unorderedNumbers;
       this.numbers = new Numbers(unorderedNumbers);
+      this.end = unorderedNumbers.Length;
     }
 
     public void Sort()
     {
-      throw new System.NotImplementedException();
+      while(shouldContinueSorting)
+      {
+        shouldContinueSorting = false;
+        IterateAndSwapNumbersIfNeed();
+        if(shouldContinueSorting==false)
+        {
+          break;
+        }
+        shouldContinueSorting=true;
+        end-=1;
+        IterateReverseAndSwapNumbersIfNeed(end, start);
+        start+=1;
+      }
     }
 
     public void IterateAndSwapNumbersIfNeed()
@@ -26,6 +42,7 @@ namespace practicing_algorithms.algorithms.sort.exchange
         if(leftNumber>rightNumber)
         {
           this.numbers.SwapNumberAndNextAt(index);
+          shouldContinueSorting = true;
         }
       }
     }
@@ -40,6 +57,7 @@ namespace practicing_algorithms.algorithms.sort.exchange
         if(leftNumber > rightNumber)
         {
           this.numbers.SwapNumberAndNextAt(index);
+          shouldContinueSorting = true;
         }
       }
     }

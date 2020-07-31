@@ -8,7 +8,14 @@ namespace practicing_algorithms.tests.sort.exchange
     [Fact]
     public void Test()
     {
-      Assert.Throws<System.NotImplementedException>( () => new CocktailSorting(new int[0]).Sort() );
+      // Arrange
+      var unorderedNumbers = new int[5]{5,4,3,2,1};
+
+      // Act
+      var cocktailSorting = new CocktailSorting(unorderedNumbers);
+
+      // Assert
+      Assert.NotEqual(new int[5]{1,2,3,4,5}, unorderedNumbers);
     }
 
     [Fact]
