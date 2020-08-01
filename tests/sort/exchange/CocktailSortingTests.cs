@@ -13,9 +13,10 @@ namespace practicing_algorithms.tests.sort.exchange
 
       // Act
       var cocktailSorting = new CocktailSorting(unorderedNumbers);
+      cocktailSorting.Sort();
 
       // Assert
-      Assert.NotEqual(new int[5]{1,2,3,4,5}, unorderedNumbers);
+      Assert.Equal(new int[5]{1,2,3,4,5}, unorderedNumbers);
     }
 
     [Fact]
@@ -30,19 +31,19 @@ namespace practicing_algorithms.tests.sort.exchange
       // ASSERT
 
       // First pass
-      cocktailSorting.IterateAndSwapNumbersIfNeed();
+      cocktailSorting.IterateAndSwapNumbersIfNeed(0,4);
       Assert.Equal(new int[5] { 4, 3, 2, 1, 5 }, unorderedNumbers);
 
       // Second pass
-      cocktailSorting.IterateAndSwapNumbersIfNeed();
+      cocktailSorting.IterateAndSwapNumbersIfNeed(0,4);
       Assert.Equal(new int[5]{3,2,1,4,5}, unorderedNumbers);
 
       // Third pass
-      cocktailSorting.IterateAndSwapNumbersIfNeed();
+      cocktailSorting.IterateAndSwapNumbersIfNeed(0,4);
       Assert.Equal(new int[5]{2,1,3,4,5}, unorderedNumbers);
 
       // Fourth pass
-      cocktailSorting.IterateAndSwapNumbersIfNeed();
+      cocktailSorting.IterateAndSwapNumbersIfNeed(0,4);
       Assert.Equal(new int[5]{1,2,3,4,5}, unorderedNumbers);
     }
 

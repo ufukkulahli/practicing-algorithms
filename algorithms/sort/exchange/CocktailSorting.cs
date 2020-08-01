@@ -20,21 +20,22 @@ namespace practicing_algorithms.algorithms.sort.exchange
       while(shouldContinueSorting)
       {
         shouldContinueSorting = false;
-        IterateAndSwapNumbersIfNeed();
+        IterateAndSwapNumbersIfNeed(start, end-1);
         if(shouldContinueSorting==false)
         {
           break;
         }
         shouldContinueSorting=true;
         end-=1;
-        IterateReverseAndSwapNumbersIfNeed(end, start);
+        IterateReverseAndSwapNumbersIfNeed(end-1, start);
         start+=1;
       }
     }
 
-    public void IterateAndSwapNumbersIfNeed()
+    // TODO: DELETE PARAMETERS WHEN ITS TEST IS MADE COMPATIBLE
+    public void IterateAndSwapNumbersIfNeed(int start, int end)
     {
-      for(var index=0;  index<unorderedNumbers.Count();  index++)
+      for(var index=start;  index<end;  index++)
       {
         var leftNumber=unorderedNumbers[index];
         var rightNumber=unorderedNumbers[index+1];
@@ -47,6 +48,7 @@ namespace practicing_algorithms.algorithms.sort.exchange
       }
     }
 
+    // TODO: DELETE PARAMETERS WHEN ITS TEST IS MADE COMPATIBLE
     public void IterateReverseAndSwapNumbersIfNeed(int start, int end)
     {
       for(var index=start;  index>=end;  index--)
