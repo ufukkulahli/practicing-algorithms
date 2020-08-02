@@ -5,12 +5,14 @@ namespace practicing_algorithms.algorithms.sort.exchange
     readonly int[] unorderedNumbers;
     int gapSize;
     bool completedSwappingNumbers;
+    readonly Numbers numbers;
 
     public CombSorting(int[] unorderedNumbers)
     {
       this.unorderedNumbers = unorderedNumbers;
       this.gapSize          = unorderedNumbers.Length;
       this.completedSwappingNumbers   = true;
+      this.numbers = new Numbers(unorderedNumbers);
     }
 
     public void Sort()
@@ -34,8 +36,7 @@ namespace practicing_algorithms.algorithms.sort.exchange
 
         if(leftNumber > rightNumber)
         {
-          SwapNumbers(index+gapSize, index);
-
+          numbers.SwapNumbersAtIndexes(index+gapSize, index);
           completedSwappingNumbers = true;
         }
       }
@@ -53,13 +54,6 @@ namespace practicing_algorithms.algorithms.sort.exchange
       }
 
       return newGapSize;
-    }
-
-    void SwapNumbers(int indexOfRightNumber, int indexOfLeftNumber)
-    {
-      var leftNumber                       = unorderedNumbers[indexOfLeftNumber];
-      unorderedNumbers[indexOfLeftNumber]  = unorderedNumbers[indexOfRightNumber];
-      unorderedNumbers[indexOfRightNumber] = leftNumber;
     }
   }
 }
