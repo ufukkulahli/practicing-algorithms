@@ -9,10 +9,10 @@ namespace practicing_algorithms.algorithms.sort.exchange
 
     public CombSorting(int[] unorderedNumbers)
     {
-      this.unorderedNumbers = unorderedNumbers;
-      this.gapSize          = unorderedNumbers.Length;
-      this.completedSwappingNumbers   = true;
-      this.numbers = new Numbers(unorderedNumbers);
+      this.unorderedNumbers          = unorderedNumbers;
+      this.gapSize                   = unorderedNumbers.Length;
+      this.completedSwappingNumbers  = true;
+      this.numbers                   = new Numbers(unorderedNumbers);
     }
 
     public void Sort()
@@ -31,8 +31,8 @@ namespace practicing_algorithms.algorithms.sort.exchange
     {
       for (var index=0;  index<unorderedNumbers.Length-gapSize;  index++)
       {
-        var leftNumber = unorderedNumbers[index];
-        var rightNumber= unorderedNumbers[index+gapSize];
+        var leftNumber  = unorderedNumbers[index];
+        var rightNumber = unorderedNumbers[index+gapSize];
 
         if(leftNumber > rightNumber)
         {

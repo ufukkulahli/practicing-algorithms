@@ -22,8 +22,8 @@ namespace practicing_algorithms.algorithms.sort.exchange
           continue;
         }
 
-        var leftNumber = unorderedNumbers[gnomesPosition-1];
-        var rightNumber= unorderedNumbers[gnomesPosition];
+        var leftNumber  = unorderedNumbers[gnomesPosition-1];
+        var rightNumber = unorderedNumbers[gnomesPosition];
 
         if(rightNumber >= leftNumber)
         {

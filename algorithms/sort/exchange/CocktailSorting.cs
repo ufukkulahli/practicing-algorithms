@@ -4,7 +4,7 @@ namespace practicing_algorithms.algorithms.sort.exchange
   {
     readonly int[] unorderedNumbers;
     readonly Numbers numbers;
-    bool shouldContinueSorting = true;
+    bool completedSwappingNumbers = true;
     int end = 0;
     int start = 0;
 
@@ -17,49 +17,47 @@ namespace practicing_algorithms.algorithms.sort.exchange
 
     public void Sort()
     {
-      while(shouldContinueSorting)
+      while(completedSwappingNumbers)
       {
-        shouldContinueSorting = false;
+        completedSwappingNumbers = false;
         IterateAndSwapNumbersIfNeed(start, end-1);
-        if(shouldContinueSorting==false)
+        if(completedSwappingNumbers==false)
         {
           break;
         }
-        shouldContinueSorting=true;
+        completedSwappingNumbers=true;
         end-=1;
         IterateReverseAndSwapNumbersIfNeed(end-1, start);
         start+=1;
       }
     }
 
-    // TODO: DELETE PARAMETERS WHEN ITS TEST IS MADE COMPATIBLE
     public void IterateAndSwapNumbersIfNeed(int start, int end)
     {
       for(var index=start;  index<end;  index++)
       {
-        var leftNumber=unorderedNumbers[index];
-        var rightNumber=unorderedNumbers[index+1];
+        var leftNumber  = unorderedNumbers[index];
+        var rightNumber = unorderedNumbers[index+1];
 
         if(leftNumber>rightNumber)
         {
           this.numbers.SwapNumberAndNextAt(index);
-          shouldContinueSorting = true;
+          completedSwappingNumbers = true;
         }
       }
     }
 
-    // TODO: DELETE PARAMETERS WHEN ITS TEST IS MADE COMPATIBLE
     public void IterateReverseAndSwapNumbersIfNeed(int start, int end)
     {
       for(var index=start;  index>=end;  index--)
       {
-        var leftNumber = unorderedNumbers[index];
+        var leftNumber  = unorderedNumbers[index];
         var rightNumber = unorderedNumbers[index+1];
 
         if(leftNumber > rightNumber)
         {
           this.numbers.SwapNumberAndNextAt(index);
-          shouldContinueSorting = true;
+          completedSwappingNumbers = true;
         }
       }
     }
