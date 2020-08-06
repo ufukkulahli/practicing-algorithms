@@ -14,39 +14,32 @@ namespace practicing_algorithms.algorithms.sort.merge
     {
       List<int> result = new List<int>();
 
-      var leftAny = left.Any();
-      var rightAny = right.Any();
-      int firstOfLeft = left.First();
-      var firstOfRight = right.First();
-
-      while (leftAny || rightAny)
+      while (left.Any() || right.Any())
       {
-        if (leftAny && rightAny)
+        if (left.Any() && right.Any())
         {
-          if (firstOfLeft <= firstOfRight)
+          if (left.First() <= right.First())
           {
-            result.Add(firstOfLeft);
-            left.Remove(firstOfLeft);
+            result.Add(left.First());
+            left.Remove(left.First());
           }
           else
           {
-            result.Add(firstOfRight);
-            right.Remove(firstOfRight);
+            result.Add(right.First());
+            right.Remove(right.First());
           }
-          continue;
         }
 
-        if (leftAny)
+        else if (left.Any())
         {
-          result.Add(firstOfLeft);
-          left.Remove(firstOfLeft);
-          continue;
+          result.Add(left.First());
+          left.Remove(left.First());
         }
 
-        if (rightAny)
+        else if (right.Any())
         {
-          result.Add(firstOfRight);
-          right.Remove(firstOfRight);
+          result.Add(right.First());
+          right.Remove(right.First());
         }
       }
       return result;
