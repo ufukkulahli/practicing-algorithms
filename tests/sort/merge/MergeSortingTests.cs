@@ -21,5 +21,25 @@ namespace practicing_algorithms.tests.sort.merge
       // Assert
       Assert.Equal(new List<int>{10,11,20,21}, result);
     }
+
+    [Fact]
+    public void MergeTest2()
+    {
+      // Arrange && Act
+      var result = new MergeSorting().Merge(new List<int>{10, 11}, new List<int>{});
+
+      // Assert
+      Assert.Equal(new List<int>{10,11}, result);
+    }
+
+    [Fact]
+    public void MergeTest3()
+    {
+      // Arrange && Act
+      var result = new MergeSorting().Merge(new List<int>{}, new List<int>{20, 21});
+
+      // Assert
+      Assert.Equal(new List<int>{20,21}, result);
+    }
   }
 }
