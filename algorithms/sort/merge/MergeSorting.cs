@@ -23,6 +23,18 @@ namespace practicing_algorithms.algorithms.sort.merge
       return output;
     }
 
+    public IEnumerable<int> DivideCollection(List<int> collection, int start, int end)
+    {
+      var output = new List<int>();
+
+      for (var index = start; index < end; index++)
+      {
+        output.Add(collection[index]);
+      }
+
+      return output;
+    }
+
     public IEnumerable<int> Merge(List<int> left, List<int> right)
     {
       List<int> result = new List<int>();

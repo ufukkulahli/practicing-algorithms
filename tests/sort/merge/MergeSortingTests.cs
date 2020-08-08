@@ -55,5 +55,20 @@ namespace practicing_algorithms.tests.sort.merge
       // Assert
       Assert.Equal(expected, firstHalf);
     }
+
+    [Fact]
+    public void DivideCollectionAndGetRightHalfTest()
+    {
+      // Arrange
+      var numbers = new List<int>{1,2,3,4};
+      var expected = new List<int>{3,4};
+      var midway = numbers.Count / 2;
+
+      // Act
+      var rightHalf = new MergeSorting().DivideCollection(numbers, midway, numbers.Count);
+
+      // Assert
+      Assert.Equal(expected, rightHalf);
+    }
   }
 }
