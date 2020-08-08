@@ -10,6 +10,19 @@ namespace practicing_algorithms.algorithms.sort.merge
       throw new System.NotImplementedException();
     }
 
+    public IEnumerable<int> FirstHalfOfCollection(List<int> collection)
+    {
+      var midway = collection.Count / 2;
+      var output = new List<int>();
+
+      for (var index = 0; index < midway; index++)
+      {
+        output.Add(collection[index]);
+      }
+
+      return output;
+    }
+
     public IEnumerable<int> Merge(List<int> left, List<int> right)
     {
       List<int> result = new List<int>();

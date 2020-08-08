@@ -41,5 +41,19 @@ namespace practicing_algorithms.tests.sort.merge
       // Assert
       Assert.Equal(new List<int>{20,21}, result);
     }
+
+    [Fact]
+    public void DivideCollectionInTwoTest()
+    {
+      // Arrange
+      var numbers = new List<int>{1,2,3,4};
+      var expected = new List<int>{1,2};
+
+      // Act
+      var firstHalf = new MergeSorting().FirstHalfOfCollection(numbers);
+
+      // Assert
+      Assert.Equal(expected, firstHalf);
+    }
   }
 }
