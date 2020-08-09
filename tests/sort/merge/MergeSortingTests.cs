@@ -13,7 +13,7 @@ namespace practicing_algorithms.tests.sort.merge
     }
 
     [Fact]
-    public void MergeTest()
+    public void MergeTwoCollections()
     {
       // Arrange && Act
       var result = new MergeSorting().Merge(new List<int>{10, 11}, new List<int>{20,21});
@@ -23,7 +23,7 @@ namespace practicing_algorithms.tests.sort.merge
     }
 
     [Fact]
-    public void MergeTest2()
+    public void MergeTwoCollections_But_RightCollectionIsEmpty()
     {
       // Arrange && Act
       var result = new MergeSorting().Merge(new List<int>{10, 11}, new List<int>{});
@@ -33,7 +33,7 @@ namespace practicing_algorithms.tests.sort.merge
     }
 
     [Fact]
-    public void MergeTest3()
+    public void MergeTwoCollections_But_LeftCollectionIsEmpty()
     {
       // Arrange && Act
       var result = new MergeSorting().Merge(new List<int>{}, new List<int>{20, 21});
@@ -43,14 +43,15 @@ namespace practicing_algorithms.tests.sort.merge
     }
 
     [Fact]
-    public void DivideCollectionInTwoTest()
+    public void DivideCollectionAndGetFirstHalfTest()
     {
       // Arrange
       var numbers = new List<int>{1,2,3,4};
       var expected = new List<int>{1,2};
+      var midway = numbers.Count / 2;
 
       // Act
-      var firstHalf = new MergeSorting().FirstHalfOfCollection(numbers);
+      var firstHalf = new MergeSorting().DivideCollection(numbers, 0, midway);
 
       // Assert
       Assert.Equal(expected, firstHalf);
