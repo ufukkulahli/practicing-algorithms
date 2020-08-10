@@ -9,7 +9,15 @@ namespace practicing_algorithms.tests.sort.merge
     [Fact]
     public void Test()
     {
-      Assert.Throws<System.NotImplementedException>( () => new MergeSorting().Sort() );
+      // Arrange
+      var numbers = new List<int>{4,3,2,1};
+      var expected = new List<int>{1,2,3,4};
+
+      // Act
+      var actual = new MergeSorting().Sort(numbers);
+
+      // Assert
+      Assert.Equal(expected, actual);
     }
 
     [Fact]

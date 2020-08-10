@@ -5,12 +5,23 @@ namespace practicing_algorithms.algorithms.sort.merge
 {
   public sealed class MergeSorting
   {
-    public void Sort()
+    public List<int> Sort(List<int> unorderedNumbers)
     {
-      throw new System.NotImplementedException();
+      if (unorderedNumbers.Count <= 1)
+      {
+        return unorderedNumbers;
+      }
+
+      var midway = unorderedNumbers.Count / 2;
+      var leftHalfOfCollection = DivideCollection(unorderedNumbers, 0, midway);
+      var rightHalfOfCollection = DivideCollection(unorderedNumbers, midway, unorderedNumbers.Count);
+
+      var newLeft = Sort(leftHalfOfCollection);
+      var newRight = Sort(rightHalfOfCollection);
+      return Merge(newLeft, newRight);
     }
 
-    public IEnumerable<int> DivideCollection(List<int> collection, int start, int end)
+    public List<int> DivideCollection(List<int> collection, int start, int end)
     {
       var output = new List<int>();
 
@@ -22,7 +33,7 @@ namespace practicing_algorithms.algorithms.sort.merge
       return output;
     }
 
-    public IEnumerable<int> Merge(List<int> left, List<int> right)
+    public List<int> Merge(List<int> left, List<int> right)
     {
       List<int> result = new List<int>();
 
