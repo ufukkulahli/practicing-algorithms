@@ -9,7 +9,7 @@ namespace practicing_algorithms.algorithms.sort.distribution
     
     public int FindBiggest(int[] numbers)  
     {  
-        var biggest = arr[0];  
+        var biggest = numbers[0];  
         for (var index = 1; index < numbers.Length; index++)
         {
           if (numbers[index] > biggest)
