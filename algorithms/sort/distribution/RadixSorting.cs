@@ -6,19 +6,20 @@ namespace practicing_algorithms.algorithms.sort.distribution
     {
       throw new System.NotImplementedException();
     }
-    
-    public int FindBiggest(int[] numbers)  
-    {  
-        var biggest = numbers[0];  
-        for (var index = 1; index < numbers.Length; index++)
+
+    public int FindBiggest(int[] numbers)
+    {
+      var biggest = numbers[0];
+
+      for (var index = 1; index < numbers.Length; index++)
+      {
+        if (numbers[index] > biggest)
         {
-          if (numbers[index] > biggest)
-          {
-            biggest = numbers[index];
-          }
+          biggest = numbers[index];
         }
-              
-        return biggest;  
+      }
+
+      return biggest;
     }
   }
 }
