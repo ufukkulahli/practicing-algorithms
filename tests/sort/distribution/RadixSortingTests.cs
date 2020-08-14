@@ -16,5 +16,20 @@ namespace practicing_algorithms.tests.sort.distribution
     {
       Assert.Equal(4, new RadixSorting().FindBiggest(new int[] { 1, 2, 3, 4 }));
     }
+
+    [Fact]
+    public void OccurenceTest()
+    {
+      // Arrange
+      var numbers = new int[]{1,2,3,4};
+      var occurences = new int[4];
+
+      // Act
+      new RadixSorting().OccurenceOfNumbers(numbers, occurences, 1);
+
+      // Assert
+      Assert.NotEqual(new int[4]{1,2,3,4}, occurences);
+    }
+
   }
 }

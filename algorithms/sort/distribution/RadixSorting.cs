@@ -21,5 +21,15 @@ namespace practicing_algorithms.algorithms.sort.distribution
 
       return biggest;
     }
+
+    public void OccurenceOfNumbers(int[] numbers, int[] occurences, int place)
+    {
+      for(var index=0;  index<numbers.Count();  index++)
+      {
+        var result = (numbers[index]/place) % 10;
+        occurences[result]++;
+      }
+    }
+
   }
 }
