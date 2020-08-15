@@ -28,7 +28,7 @@ namespace practicing_algorithms.tests.sort.distribution
       new RadixSorting().OccurenceOfNumbers(numbers, occurences, 1);
 
       // Assert
-      Assert.NotEqual(new int[4]{1,2,3,4}, occurences);
+      Assert.Equal(new int[4]{0,1,1,1}, occurences);
     }
 
   }
