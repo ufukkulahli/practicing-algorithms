@@ -31,5 +31,18 @@ namespace practicing_algorithms.tests.sort.distribution
       Assert.Equal(new int[4]{0,1,1,1}, occurences);
     }
 
+    [Fact]
+    public void CumulativeCountTest()
+    {
+      // Arrange
+      var occurences = new int[4]{0,1,1,1};
+
+      // Act
+      new RadixSorting().CumulativeCount(occurences);
+
+      // Assert
+      Assert.Equal(new int[4]{0,1,2,3}, occurences);
+    }
+
   }
 }

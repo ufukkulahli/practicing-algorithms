@@ -31,5 +31,13 @@ namespace practicing_algorithms.algorithms.sort.distribution
       }
     }
 
+    public void CumulativeCount(int[] occurences)
+    {
+      for(var index=1;  index<occurences.Length;  index++)
+      {
+        occurences[index] += occurences[index-1];
+      }
+    }
+
   }
 }
