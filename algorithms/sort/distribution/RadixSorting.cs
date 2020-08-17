@@ -39,5 +39,22 @@ namespace practicing_algorithms.algorithms.sort.distribution
       }
     }
 
+    public void BuildOutput(int[] numbers, int[] occurences, int place)
+    {
+      int[] outputs = new int[occurences.Length];
+
+      for(var index=occurences.Count();  index>=0;  index--)
+      {
+        var currentNumber  = numbers[index];
+        var x              = currentNumber / place;
+        var y              = x % 10;
+        var number         = occurences[y];
+        var current        = number - 1;
+
+        outputs[current] = currentNumber;
+        occurences[y]--;
+      }
+    }
+
   }
 }
