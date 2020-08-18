@@ -39,7 +39,7 @@ namespace practicing_algorithms.algorithms.sort.distribution
       }
     }
 
-    public void BuildOutput(int[] numbers, int[] occurences, int place)
+    public int[] BuildOutput(int[] numbers, int[] occurences, int place)
     {
       int[] outputs = new int[occurences.Length];
 
@@ -54,6 +54,8 @@ namespace practicing_algorithms.algorithms.sort.distribution
         outputs[current] = currentNumber;
         occurences[y]--;
       }
+
+      return outputs;
     }
 
   }

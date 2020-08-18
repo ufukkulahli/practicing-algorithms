@@ -44,5 +44,20 @@ namespace practicing_algorithms.tests.sort.distribution
       Assert.Equal(new int[4]{0,1,2,3}, occurences);
     }
 
+    [Fact]
+    public void BuildOutputTest()
+    {
+      // Arrange
+      var occurences = new int[4]{0,1,1,1};
+      var numbers = new int[]{4,3,2,1};
+      new RadixSorting().CumulativeCount(occurences);
+
+      // Act
+      var output = new RadixSorting().BuildOutput(numbers, occurences, 1);
+
+      // Assert
+      Assert.NotEqual(new int[4]{1,2,3,4}, output);
+    }
+
   }
 }
