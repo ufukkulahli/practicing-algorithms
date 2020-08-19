@@ -59,5 +59,19 @@ namespace practicing_algorithms.tests.sort.distribution
       Assert.NotEqual(new int[4]{1,2,3,4}, output);
     }
 
+    [Fact]
+    public void CopyOutputTest()
+    {
+      // Arrange
+      var outputs = new int[4]{1,2,3,4};
+      var numbers = new int[]{4,3,2,1};
+
+      // Act
+      new RadixSorting().CopyOutput(numbers, outputs);
+
+      // Assert
+      Assert.Equal(new int[4]{1,2,3,4}, numbers);
+    }
+
   }
 }

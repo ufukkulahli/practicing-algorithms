@@ -58,5 +58,13 @@ namespace practicing_algorithms.algorithms.sort.distribution
       return outputs;
     }
 
+    public void CopyOutput(int[] numbers, int[] outputs)
+    {
+      for(var index=0;  index<numbers.Length;  index++)
+      {
+        numbers[index] = outputs[index];
+      }
+    }
+
   }
 }
