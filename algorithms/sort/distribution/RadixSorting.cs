@@ -2,9 +2,21 @@ namespace practicing_algorithms.algorithms.sort.distribution
 {
   public sealed class RadixSorting
   {
-    public void Sort()
+
+    public void Sort(int[] numbers)
     {
-      throw new System.NotImplementedException();
+      var biggestNumber = FindBiggest(numbers);
+
+      for(var index=1;  (biggestNumber/index)>0;  index++)
+      {
+        var biggest = FindBiggest(numbers);
+        var occurences = BuildOccurences(biggest);
+        OccurenceOfNumbers(numbers, occurences, index);
+        CumulativeCount(occurences);
+        var outputs = BuildOutput(numbers, occurences, index);
+        CopyOutput(numbers, outputs);
+      }
+
     }
 
     public int FindBiggest(int[] numbers)
@@ -20,6 +32,18 @@ namespace practicing_algorithms.algorithms.sort.distribution
       }
 
       return biggest;
+    }
+
+    public int[] BuildOccurences(int biggestNumber)
+    {
+      var occurences = new int[biggestNumber+1];
+
+      for(var index=0;  index<occurences.Count();  index++)
+      {
+        occurences[index]=0;
+      }
+
+      return occurences;
     }
 
     public void OccurenceOfNumbers(int[] numbers, int[] occurences, int place)

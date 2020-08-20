@@ -5,11 +5,6 @@ namespace practicing_algorithms.tests.sort.distribution
 {
   public class RadixSortingTests
   {
-    [Fact]
-    public void Test()
-    {
-      Assert.Throws<System.NotImplementedException>(() => new RadixSorting().Sort());
-    }
 
     [Fact]
     public void FindBiggestTest()
@@ -71,6 +66,19 @@ namespace practicing_algorithms.tests.sort.distribution
 
       // Assert
       Assert.Equal(new int[4]{1,2,3,4}, numbers);
+    }
+
+    [Fact]
+    public void SortingTest()
+    {
+      // Arrange
+      var numbers = new int[]{4,3,2,1};
+
+      // Act
+      new RadixSorting().Sort(numbers);
+
+      // Assert
+      Assert.NotEqual(new int[4]{1,2,3,4}, numbers);
     }
 
   }
