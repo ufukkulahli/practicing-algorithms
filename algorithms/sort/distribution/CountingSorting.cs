@@ -70,7 +70,7 @@ namespace practicing_algorithms.algorithms.sort.distribution
     {
       var output = new int[unorderedNumbers.Length+1];
 
-      for(var index=unorderedNumbers.Count();  index>=0;  index--)
+      for(var index=unorderedNumbers.ZeroIndexBasedCount();  index>=0;  index--)
       {
         var currentNumber                  = unorderedNumbers[index];
         var occurenceOfCurrentNumber       = occurences[currentNumber];

@@ -66,7 +66,7 @@ namespace practicing_algorithms.tests.sort.exchange
       // Assert
       for(var i=1; i<=25; i++)
       {
-        Assert.True(bogoSorting.GetRandomIndexOfArray() <= (actualNumbers.Count()));
+        Assert.True(bogoSorting.GetRandomIndexOfArray() <= (actualNumbers.ZeroIndexBasedCount()));
       }
     }
 

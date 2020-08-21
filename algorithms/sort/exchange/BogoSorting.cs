@@ -30,11 +30,11 @@ namespace practicing_algorithms.algorithms.sort.exchange
 
     public void Swap(int index, int nextIndex) => numbers.SwapNumbersAtIndexes(index, nextIndex);
 
-    public int GetRandomIndexOfArray() => random.Next(unorderedNumbers.Count());
+    public int GetRandomIndexOfArray() => random.Next(unorderedNumbers.ZeroIndexBasedCount());
 
     public void Shuffle()
     {
-      for(var index=0; index<=unorderedNumbers.Count(); index++)
+      for(var index=0; index<=unorderedNumbers.ZeroIndexBasedCount(); index++)
       {
         Swap(GetRandomIndexOfArray(), index);
       }

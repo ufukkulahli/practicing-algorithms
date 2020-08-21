@@ -13,7 +13,7 @@ namespace practicing_algorithms.algorithms.sort.selection
 
     public void Sort()
     {
-      for(var index=0;  index<unorderedNumbers.Count();  index++)
+      for(var index=0;  index<unorderedNumbers.ZeroIndexBasedCount();  index++)
       {
         var indexOfSmallestNumber = FindIndexOfSmallestNumberStartingFrom(index);
         numbers.SwapNumbersAtIndexes(indexOfSmallestNumber, index);

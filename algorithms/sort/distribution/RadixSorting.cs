@@ -38,7 +38,7 @@ namespace practicing_algorithms.algorithms.sort.distribution
     {
       var occurences = new int[biggestNumber+1];
 
-      for(var index=0;  index<occurences.Count();  index++)
+      for(var index=0;  index<occurences.ZeroIndexBasedCount();  index++)
       {
         occurences[index]=0;
       }
@@ -48,7 +48,7 @@ namespace practicing_algorithms.algorithms.sort.distribution
 
     public void OccurenceOfNumbers(int[] numbers, int[] occurences, int place)
     {
-      for(var index=0;  index<numbers.Count();  index++)
+      for(var index=0;  index<numbers.ZeroIndexBasedCount();  index++)
       {
         var result = (numbers[index]/place) % 10;
         occurences[result]++;
@@ -67,7 +67,7 @@ namespace practicing_algorithms.algorithms.sort.distribution
     {
       int[] outputs = new int[occurences.Length];
 
-      for(var index=occurences.Count();  index>=0;  index--)
+      for(var index=occurences.ZeroIndexBasedCount();  index>=0;  index--)
       {
         var currentNumber  = numbers[index];
         var x              = currentNumber / place;

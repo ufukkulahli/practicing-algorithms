@@ -15,7 +15,7 @@ namespace practicing_algorithms.algorithms.sort.selection
     {
       RearrangeGivenArray();
 
-      for(var index=(unorderedNumbers.Count()); index>=0; index--)
+      for(var index=(unorderedNumbers.ZeroIndexBasedCount()); index>=0; index--)
       {
         numbers.SwapNumbersAtIndexes(0, index);
         RebuildHeap(index, 0);
