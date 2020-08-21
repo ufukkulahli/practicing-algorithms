@@ -78,7 +78,7 @@ namespace practicing_algorithms.tests.sort.distribution
       new RadixSorting().Sort(numbers);
 
       // Assert
-      Assert.NotEqual(new int[4]{1,2,3,4}, numbers);
+      Assert.Equal(new int[4]{1,2,3,4}, numbers);
     }
 
   }

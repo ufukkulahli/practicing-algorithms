@@ -7,13 +7,13 @@ namespace practicing_algorithms.algorithms.sort.distribution
     {
       var biggestNumber = FindBiggest(numbers);
 
-      for(var index=1;  (biggestNumber/index)>0;  index++)
+      for(var place=1;  (biggestNumber/place)>0;  place*=10)
       {
         var biggest = FindBiggest(numbers);
         var occurences = BuildOccurences(biggest);
-        OccurenceOfNumbers(numbers, occurences, index);
+        OccurenceOfNumbers(numbers, occurences, place);
         CumulativeCount(occurences);
-        var outputs = BuildOutput(numbers, occurences, index);
+        var outputs = BuildOutput(numbers, occurences, place);
         CopyOutput(numbers, outputs);
       }
 
@@ -38,7 +38,7 @@ namespace practicing_algorithms.algorithms.sort.distribution
     {
       var occurences = new int[biggestNumber+1];
 
-      for(var index=0;  index<occurences.ZeroIndexBasedCount();  index++)
+      for(var index=0;  index<biggestNumber;  index++)
       {
         occurences[index]=0;
       }
@@ -48,9 +48,10 @@ namespace practicing_algorithms.algorithms.sort.distribution
 
     public void OccurenceOfNumbers(int[] numbers, int[] occurences, int place)
     {
-      for(var index=0;  index<numbers.ZeroIndexBasedCount();  index++)
+      for(var index=0;  index<numbers.Length;  index++)
       {
-        var result = (numbers[index]/place) % 10;
+        int x = numbers[index] / place;
+        var result = x % 10;
         occurences[result]++;
       }
     }
@@ -65,9 +66,9 @@ namespace practicing_algorithms.algorithms.sort.distribution
 
     public int[] BuildOutput(int[] numbers, int[] occurences, int place)
     {
-      int[] outputs = new int[occurences.Length];
+      int[] outputs = new int[numbers.Length+1];
 
-      for(var index=occurences.ZeroIndexBasedCount();  index>=0;  index--)
+      for(var index=numbers.ZeroIndexBasedCount();  index>=0;  index--)
       {
         var currentNumber  = numbers[index];
         var x              = currentNumber / place;
