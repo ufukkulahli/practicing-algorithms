@@ -19,5 +19,7 @@ namespace practicing_algorithms.algorithms
       }
     }
 
+    public void ResetDistanceOfSourceVertex(int sourceVertex) => this.shortestDistances[sourceVertex] = 0;
+
   }
 }
