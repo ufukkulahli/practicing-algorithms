@@ -64,5 +64,11 @@ namespace practicing_algorithms.tests
       Assert.Equal(2147483647, shortestPath.shortestDistances[8]);
     }
 
+    [Fact]
+    public void UpdateTest()
+    {
+      Assert.Throws<System.NotImplementedException>( () => new DijkstrasShortestPath().Update() );
+    }
+
   }
 }
