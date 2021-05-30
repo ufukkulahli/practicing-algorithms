@@ -67,7 +67,39 @@ namespace practicing_algorithms.tests
     [Fact]
     public void UpdateTest()
     {
-      Assert.Throws<System.NotImplementedException>( () => new DijkstrasShortestPath().Update() );
+      // Arrange
+      var shortestPath = new DijkstrasShortestPath();
+      shortestPath.Reset();
+
+      var graph = new int[,]
+      {
+        { 0, 0, 0 },
+        { 3, 1, 0 },
+        { 0, 7, 0 }
+      };
+
+      var index_u = 1;
+      var index_v = 0;
+
+      // Manipulate data for testing purposes.
+      // These values will be set in the loop
+      shortestPath.ResetDistanceOfSourceVertex(sourceVertex: index_u);
+      shortestPath.SetShortestDistance(index_u, value: 2);
+      shortestPath.SetShortestDistance(index_v, value: 9);
+
+      // Act
+      shortestPath.Update(graph, index_u, index_v);
+
+      // Assert
+      Assert.Equal(5          , shortestPath.shortestDistances[0]);
+      Assert.Equal(2          , shortestPath.shortestDistances[1]);
+      Assert.Equal(2147483647 , shortestPath.shortestDistances[2]);
+      Assert.Equal(2147483647 , shortestPath.shortestDistances[3]);
+      Assert.Equal(2147483647 , shortestPath.shortestDistances[4]);
+      Assert.Equal(2147483647 , shortestPath.shortestDistances[5]);
+      Assert.Equal(2147483647 , shortestPath.shortestDistances[6]);
+      Assert.Equal(2147483647 , shortestPath.shortestDistances[7]);
+      Assert.Equal(2147483647 , shortestPath.shortestDistances[8]);
     }
 
   }

@@ -21,9 +21,20 @@ namespace practicing_algorithms.algorithms
 
     public void ResetDistanceOfSourceVertex(int sourceVertex) => this.shortestDistances[sourceVertex] = 0;
 
-    public void Update()
+    public void SetShortestDistance(int index, int value) => shortestDistances[index] = value;
+
+    public void Update(int[,] graph, int u, int v)
     {
-      throw new System.NotImplementedException();
+      if
+      (
+        !verticesThatAreInShortestDistance[v] &&
+        graph[u, v] != 0 &&
+        shortestDistances[u] != int.MaxValue &&
+        shortestDistances[u] + graph[u, v] < shortestDistances[v]
+      )
+      {
+        shortestDistances[v] = shortestDistances[u] + graph[u, v];
+      }
     }
 
   }
