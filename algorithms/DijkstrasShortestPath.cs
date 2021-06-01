@@ -19,7 +19,7 @@ namespace practicing_algorithms.algorithms
       }
     }
 
-    public void ResetDistanceOfSourceVertex(int sourceVertex) => this.shortestDistances[sourceVertex] = 0;
+    public void ResetDistanceOfSourceVertex(int sourceVertexIndex) => this.shortestDistances[sourceVertexIndex] = 0;
 
     public void SetShortestDistance(int index, int value) => shortestDistances[index] = value;
 

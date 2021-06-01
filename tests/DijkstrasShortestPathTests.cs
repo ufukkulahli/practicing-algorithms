@@ -94,7 +94,7 @@ namespace practicing_algorithms.tests
 
       // Manipulate data for testing purposes.
       // These values will be set in the loop
-      shortestPath.ResetDistanceOfSourceVertex(sourceVertex: index_u);
+      shortestPath.ResetDistanceOfSourceVertex(sourceVertexIndex: index_u);
       shortestPath.SetShortestDistance(index_u, value: 2);
       shortestPath.SetShortestDistance(index_v, value: 9);
 
@@ -154,7 +154,7 @@ namespace practicing_algorithms.tests
 
       // Manipulate data for testing purposes.
       // These values will be set in the loop
-      shortestPath.ResetDistanceOfSourceVertex(sourceVertex: index_u);
+      shortestPath.ResetDistanceOfSourceVertex(sourceVertexIndex: index_u);
       shortestPath.SetShortestDistance(index_u, value: 2);
       shortestPath.SetShortestDistance(index_v, value: 4); // v=4 is the reason to not to update
 
