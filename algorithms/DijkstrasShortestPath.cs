@@ -37,5 +37,22 @@ namespace practicing_algorithms.algorithms
       }
     }
 
+    public int GetMinimumDistancesIndex()
+    {
+      var minValue = int.MaxValue;
+      var minIndex = -1;
+
+      for(var v=0; v<9; v++)
+      {
+        if(this.verticesThatAreInShortestDistance[v]==false  &&  this.shortestDistances[v] <= minValue)
+        {
+          minValue = this.shortestDistances[v];
+          minIndex = v;
+        }
+      }
+
+      return minIndex;
+    }
+
   }
 }
