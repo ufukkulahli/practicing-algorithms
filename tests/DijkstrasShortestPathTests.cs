@@ -199,5 +199,20 @@ namespace practicing_algorithms.tests
       Assert.Equal(1, minimumDistancesIndex);
     }
 
+    [Fact]
+    public void GetMinimumDistancesIndexTest2()
+    {
+      // Arrange
+      var shortestPath = new DijkstrasShortestPath();
+      shortestPath.Reset();
+      shortestPath.ResetDistanceOfSourceVertex(5);
+
+      // Act
+      var minimumDistancesIndex = shortestPath.GetMinimumDistancesIndex();
+
+      // Assert
+      Assert.Equal(5, minimumDistancesIndex);
+    }
+
   }
 }
