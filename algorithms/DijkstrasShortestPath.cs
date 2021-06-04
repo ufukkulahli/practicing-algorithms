@@ -21,6 +21,16 @@ namespace practicing_algorithms.algorithms
 
     public void ResetDistanceOfSourceVertex(int sourceVertexIndex) => this.shortestDistances[sourceVertexIndex] = 0;
 
+    public void FindShortestPath(int[,] graph)
+    {
+      for(var i=0; i<(graph.GetLength(0)-1);  i++)
+      {
+        var u = GetMinimumDistancesIndex();
+        this.verticesThatAreInShortestDistance[u] = true;
+        UpdateDistances(graph, u);
+      }
+    }
+
     public void UpdateDistances(int[,] graph, int u)
     {
       for(var v=0; v<graph.GetLength(0); v++)
