@@ -21,15 +21,7 @@ namespace practicing_algorithms.tests
       shortestPath.Reset();
 
       // Assert
-      Assert.Equal(2147483647, shortestPath.shortestDistances[0]);
-      Assert.Equal(2147483647, shortestPath.shortestDistances[1]);
-      Assert.Equal(2147483647, shortestPath.shortestDistances[2]);
-      Assert.Equal(2147483647, shortestPath.shortestDistances[3]);
-      Assert.Equal(2147483647, shortestPath.shortestDistances[4]);
-      Assert.Equal(2147483647, shortestPath.shortestDistances[5]);
-      Assert.Equal(2147483647, shortestPath.shortestDistances[6]);
-      Assert.Equal(2147483647, shortestPath.shortestDistances[7]);
-      Assert.Equal(2147483647, shortestPath.shortestDistances[8]);
+      this.AssertResults1(shortestPath);
 
       Assert.False(shortestPath.verticesThatAreInShortestDistance[0]);
       Assert.False(shortestPath.verticesThatAreInShortestDistance[1]);
@@ -82,15 +74,7 @@ namespace practicing_algorithms.tests
       var index_v = 0;
 
       // Pre-act 1
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[0]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[1]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[2]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[3]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[4]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[5]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[6]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[7]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[8]);
+      this.AssertResults1(shortestPath);
 
       // Manipulate data for testing purposes.
       // These values will be set in the loop
@@ -99,29 +83,13 @@ namespace practicing_algorithms.tests
       shortestPath.SetShortestDistance(index_v, value: 9);
 
       // Pre-act 2
-      Assert.Equal(9          , shortestPath.shortestDistances[0]);
-      Assert.Equal(2          , shortestPath.shortestDistances[1]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[2]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[3]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[4]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[5]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[6]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[7]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[8]);
+      this.AssertResults2(shortestPath);
 
       // Act
       shortestPath.Update(graph, index_u, index_v);
 
       // Assert
-      Assert.Equal(5          , shortestPath.shortestDistances[0]);
-      Assert.Equal(2          , shortestPath.shortestDistances[1]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[2]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[3]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[4]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[5]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[6]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[7]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[8]);
+      this.AssertResults3(shortestPath);
     }
 
     [Fact]
@@ -232,15 +200,7 @@ namespace practicing_algorithms.tests
 
       // Pre-act 1
       shortestPath.Reset();
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[0]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[1]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[2]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[3]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[4]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[5]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[6]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[7]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[8]);
+      this.AssertResults1(shortestPath);
 
 
       // Pre-act 2
@@ -249,29 +209,13 @@ namespace practicing_algorithms.tests
       shortestPath.ResetDistanceOfSourceVertex(sourceVertexIndex: index_u);
       shortestPath.SetShortestDistance(index_u, value: 2);
       shortestPath.SetShortestDistance(index_v, value: 9);
-      Assert.Equal(9          , shortestPath.shortestDistances[0]);
-      Assert.Equal(2          , shortestPath.shortestDistances[1]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[2]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[3]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[4]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[5]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[6]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[7]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[8]);
+      this.AssertResults2(shortestPath);
 
       // Act
       shortestPath.UpdateDistances(graph, index_u);
 
       // Assert
-      Assert.Equal(5          , shortestPath.shortestDistances[0]);
-      Assert.Equal(2          , shortestPath.shortestDistances[1]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[2]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[3]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[4]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[5]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[6]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[7]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[8]);
+      this.AssertResults3(shortestPath);
     }
 
     [Fact]
@@ -292,6 +236,26 @@ namespace practicing_algorithms.tests
 
       // Pre-act 1
       shortestPath.Reset();
+      this.AssertResults1(shortestPath);
+
+
+      // Pre-act 2
+      // Manipulate data for testing purposes.
+      // These values will be set in the loop
+      shortestPath.ResetDistanceOfSourceVertex(sourceVertexIndex: index_u);
+      shortestPath.SetShortestDistance(index_u, value: 2);
+      shortestPath.SetShortestDistance(index_v, value: 9);
+      this.AssertResults2(shortestPath);
+
+      // Act
+      shortestPath.FindShortestPath(graph);
+
+      // Assert
+      this.AssertResults3(shortestPath);
+    }
+
+    private void AssertResults1(DijkstrasShortestPath shortestPath)
+    {
       Assert.Equal(2147483647 , shortestPath.shortestDistances[0]);
       Assert.Equal(2147483647 , shortestPath.shortestDistances[1]);
       Assert.Equal(2147483647 , shortestPath.shortestDistances[2]);
@@ -301,14 +265,10 @@ namespace practicing_algorithms.tests
       Assert.Equal(2147483647 , shortestPath.shortestDistances[6]);
       Assert.Equal(2147483647 , shortestPath.shortestDistances[7]);
       Assert.Equal(2147483647 , shortestPath.shortestDistances[8]);
+    }
 
-
-      // Pre-act 2
-      // Manipulate data for testing purposes.
-      // These values will be set in the loop
-      shortestPath.ResetDistanceOfSourceVertex(sourceVertexIndex: index_u);
-      shortestPath.SetShortestDistance(index_u, value: 2);
-      shortestPath.SetShortestDistance(index_v, value: 9);
+    private void AssertResults2(DijkstrasShortestPath shortestPath)
+    {
       Assert.Equal(9          , shortestPath.shortestDistances[0]);
       Assert.Equal(2          , shortestPath.shortestDistances[1]);
       Assert.Equal(2147483647 , shortestPath.shortestDistances[2]);
@@ -318,11 +278,10 @@ namespace practicing_algorithms.tests
       Assert.Equal(2147483647 , shortestPath.shortestDistances[6]);
       Assert.Equal(2147483647 , shortestPath.shortestDistances[7]);
       Assert.Equal(2147483647 , shortestPath.shortestDistances[8]);
+    }
 
-      // Act
-      shortestPath.FindShortestPath(graph);
-
-      // Assert
+    private void AssertResults3(DijkstrasShortestPath shortestPath)
+    {
       Assert.Equal(5          , shortestPath.shortestDistances[0]);
       Assert.Equal(2          , shortestPath.shortestDistances[1]);
       Assert.Equal(2147483647 , shortestPath.shortestDistances[2]);
