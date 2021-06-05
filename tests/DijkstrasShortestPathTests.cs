@@ -35,6 +35,7 @@ namespace practicing_algorithms.tests
       shortestPath.ResetDistanceOfSourceVertex(5);
 
       // Assert
+      this.AssertVerticesThatAreInShortestDistance(shortestPath);
       Assert.Equal(2147483647, shortestPath.shortestDistances[0]);
       Assert.Equal(2147483647, shortestPath.shortestDistances[1]);
       Assert.Equal(2147483647, shortestPath.shortestDistances[2]);
@@ -101,15 +102,7 @@ namespace practicing_algorithms.tests
       var index_v = 0;
 
       // Pre-act 1
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[0]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[1]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[2]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[3]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[4]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[5]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[6]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[7]);
-      Assert.Equal(2147483647 , shortestPath.shortestDistances[8]);
+      this.AssertResults1(shortestPath);
 
       // Manipulate data for testing purposes.
       // These values will be set in the loop
