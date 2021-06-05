@@ -22,16 +22,6 @@ namespace practicing_algorithms.tests
 
       // Assert
       this.AssertResults1(shortestPath);
-
-      Assert.False(shortestPath.verticesThatAreInShortestDistance[0]);
-      Assert.False(shortestPath.verticesThatAreInShortestDistance[1]);
-      Assert.False(shortestPath.verticesThatAreInShortestDistance[2]);
-      Assert.False(shortestPath.verticesThatAreInShortestDistance[3]);
-      Assert.False(shortestPath.verticesThatAreInShortestDistance[4]);
-      Assert.False(shortestPath.verticesThatAreInShortestDistance[5]);
-      Assert.False(shortestPath.verticesThatAreInShortestDistance[6]);
-      Assert.False(shortestPath.verticesThatAreInShortestDistance[7]);
-      Assert.False(shortestPath.verticesThatAreInShortestDistance[8]);
     }
 
     [Fact]
@@ -90,6 +80,7 @@ namespace practicing_algorithms.tests
 
       // Assert
       this.AssertResults3(shortestPath);
+      this.AssertVerticesThatAreInShortestDistance(shortestPath);
     }
 
     [Fact]
@@ -216,6 +207,7 @@ namespace practicing_algorithms.tests
 
       // Assert
       this.AssertResults3(shortestPath);
+      this.AssertVerticesThatAreInShortestDistance(shortestPath);
     }
 
     [Fact]
@@ -252,6 +244,15 @@ namespace practicing_algorithms.tests
 
       // Assert
       this.AssertResults3(shortestPath);
+      Assert.True (shortestPath.verticesThatAreInShortestDistance[0]);
+      Assert.True (shortestPath.verticesThatAreInShortestDistance[1]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[2]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[3]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[4]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[5]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[6]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[7]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[8]);
     }
 
     private void AssertResults1(DijkstrasShortestPath shortestPath)
@@ -265,6 +266,16 @@ namespace practicing_algorithms.tests
       Assert.Equal(2147483647 , shortestPath.shortestDistances[6]);
       Assert.Equal(2147483647 , shortestPath.shortestDistances[7]);
       Assert.Equal(2147483647 , shortestPath.shortestDistances[8]);
+
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[0]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[1]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[2]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[3]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[4]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[5]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[6]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[7]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[8]);
     }
 
     private void AssertResults2(DijkstrasShortestPath shortestPath)
@@ -278,6 +289,16 @@ namespace practicing_algorithms.tests
       Assert.Equal(2147483647 , shortestPath.shortestDistances[6]);
       Assert.Equal(2147483647 , shortestPath.shortestDistances[7]);
       Assert.Equal(2147483647 , shortestPath.shortestDistances[8]);
+
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[0]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[1]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[2]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[3]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[4]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[5]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[6]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[7]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[8]);
     }
 
     private void AssertResults3(DijkstrasShortestPath shortestPath)
@@ -291,6 +312,19 @@ namespace practicing_algorithms.tests
       Assert.Equal(2147483647 , shortestPath.shortestDistances[6]);
       Assert.Equal(2147483647 , shortestPath.shortestDistances[7]);
       Assert.Equal(2147483647 , shortestPath.shortestDistances[8]);
+    }
+
+    private void AssertVerticesThatAreInShortestDistance(DijkstrasShortestPath shortestPath)
+    {
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[0]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[1]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[2]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[3]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[4]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[5]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[6]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[7]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[8]);
     }
 
   }
