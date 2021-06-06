@@ -7,7 +7,9 @@ namespace practicing_algorithms.algorithms
 
     public void Find(int[,] graph, int source)
     {
-      throw new System.NotImplementedException();
+      this.Reset();
+      this.ResetDistanceOfSourceVertex(0);
+      this.FindShortestPath(graph);
     }
 
     public void Reset()

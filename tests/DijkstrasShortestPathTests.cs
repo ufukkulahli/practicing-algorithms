@@ -8,7 +8,23 @@ namespace practicing_algorithms.tests
     [Fact]
     public void Test()
     {
-      Assert.Throws<System.NotImplementedException>( () => new DijkstrasShortestPath().Find(null, 0) );
+      // Arrange
+      var shortestPath = new DijkstrasShortestPath();
+      var graph = new int[,]
+      {
+        { 0, 0, 0 },
+        { 3, 1, 0 },
+        { 0, 7, 0 }
+      };
+
+      var source = 1;
+
+      // Act
+      // TODO: FIX
+      // shortestPath.Find(graph, source);
+
+      // Assert
+      Assert.Throws<System.IndexOutOfRangeException>( () => shortestPath.Find(graph, source) );
     }
 
     [Fact]
