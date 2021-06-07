@@ -20,11 +20,28 @@ namespace practicing_algorithms.tests
       var source = 1;
 
       // Act
-      // TODO: FIX
-      // shortestPath.Find(graph, source);
+      shortestPath.Find(graph, source);
 
       // Assert
-      Assert.Throws<System.IndexOutOfRangeException>( () => shortestPath.Find(graph, source) );
+      Assert.Equal(3          , shortestPath.shortestDistances[0]);
+      Assert.Equal(0          , shortestPath.shortestDistances[1]);
+      Assert.Equal(2147483647 , shortestPath.shortestDistances[2]);
+      Assert.Equal(2147483647 , shortestPath.shortestDistances[3]);
+      Assert.Equal(2147483647 , shortestPath.shortestDistances[4]);
+      Assert.Equal(2147483647 , shortestPath.shortestDistances[5]);
+      Assert.Equal(2147483647 , shortestPath.shortestDistances[6]);
+      Assert.Equal(2147483647 , shortestPath.shortestDistances[7]);
+      Assert.Equal(2147483647 , shortestPath.shortestDistances[8]);
+
+      Assert.True (shortestPath.verticesThatAreInShortestDistance[0]);
+      Assert.True (shortestPath.verticesThatAreInShortestDistance[1]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[2]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[3]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[4]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[5]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[6]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[7]);
+      Assert.False(shortestPath.verticesThatAreInShortestDistance[8]);
     }
 
     [Fact]

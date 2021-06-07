@@ -8,7 +8,7 @@ namespace practicing_algorithms.algorithms
     public void Find(int[,] graph, int source)
     {
       this.Reset();
-      this.ResetDistanceOfSourceVertex(0);
+      this.ResetDistanceOfSourceVertex(source);
       this.FindShortestPath(graph);
     }
 
