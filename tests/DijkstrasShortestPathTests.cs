@@ -5,22 +5,27 @@ namespace practicing_algorithms.tests
 {
   public class DijkstrasShortestPathTests
   {
+    private int[,] Graph()
+    {
+      return
+        new int[,]
+        {
+          { 0, 0, 0 },
+          { 3, 1, 0 },
+          { 0, 7, 0 }
+        };
+    }
+
     [Fact]
     public void Test()
     {
       // Arrange
-      var shortestPath = new DijkstrasShortestPath();
-      var graph = new int[,]
-      {
-        { 0, 0, 0 },
-        { 3, 1, 0 },
-        { 0, 7, 0 }
-      };
+      var shortestPath = new DijkstrasShortestPath(Graph());
 
       var source = 1;
 
       // Act
-      shortestPath.Find(graph, source);
+      shortestPath.Find(source);
 
       // Assert
       Assert.Equal(3          , shortestPath.shortestDistances[0]);
@@ -48,7 +53,7 @@ namespace practicing_algorithms.tests
     public void ResetAllDistancesToInfinite_And_ResetVisitedVertices()
     {
       // Arrange
-      var shortestPath = new DijkstrasShortestPath();
+      var shortestPath = new DijkstrasShortestPath(Graph());
 
       // Act
       shortestPath.Reset();
@@ -61,7 +66,7 @@ namespace practicing_algorithms.tests
     public void ResetSourceVertexDistance()
     {
       // Arrange
-      var shortestPath = new DijkstrasShortestPath();
+      var shortestPath = new DijkstrasShortestPath(Graph());
 
       // Act
       shortestPath.Reset();
@@ -84,15 +89,8 @@ namespace practicing_algorithms.tests
     public void UpdateShortestPath()
     {
       // Arrange
-      var shortestPath = new DijkstrasShortestPath();
+      var shortestPath = new DijkstrasShortestPath(Graph());
       shortestPath.Reset();
-
-      var graph = new int[,]
-      {
-        { 0, 0, 0 },
-        { 3, 1, 0 },
-        { 0, 7, 0 }
-      };
 
       var index_u = 1;
       var index_v = 0;
@@ -110,7 +108,7 @@ namespace practicing_algorithms.tests
       this.AssertResults2(shortestPath);
 
       // Act
-      shortestPath.Update(graph, index_u, index_v);
+      shortestPath.Update(index_u, index_v);
 
       // Assert
       this.AssertResults3(shortestPath);
@@ -121,15 +119,8 @@ namespace practicing_algorithms.tests
     public void DoesNotUpdatePath()
     {
       // Arrange
-      var shortestPath = new DijkstrasShortestPath();
+      var shortestPath = new DijkstrasShortestPath(Graph());
       shortestPath.Reset();
-
-      var graph = new int[,]
-      {
-        { 0, 0, 0 },
-        { 3, 1, 0 },
-        { 0, 7, 0 }
-      };
 
       var index_u = 1;
       var index_v = 0;
@@ -155,7 +146,7 @@ namespace practicing_algorithms.tests
       Assert.Equal(2147483647 , shortestPath.shortestDistances[8]);
 
       // Act
-      shortestPath.Update(graph, index_u, index_v);
+      shortestPath.Update(index_u, index_v);
 
       // Assert
       Assert.Equal(4          , shortestPath.shortestDistances[0]);
@@ -173,7 +164,7 @@ namespace practicing_algorithms.tests
     public void GetMinimumDistancesIndexTest()
     {
       // Arrange
-      var shortestPath = new DijkstrasShortestPath();
+      var shortestPath = new DijkstrasShortestPath(Graph());
       shortestPath.Reset();
       shortestPath.ResetDistanceOfSourceVertex(1);
 
@@ -188,7 +179,7 @@ namespace practicing_algorithms.tests
     public void GetMinimumDistancesIndexTest2()
     {
       // Arrange
-      var shortestPath = new DijkstrasShortestPath();
+      var shortestPath = new DijkstrasShortestPath(Graph());
       shortestPath.Reset();
       shortestPath.ResetDistanceOfSourceVertex(5);
 
@@ -203,14 +194,7 @@ namespace practicing_algorithms.tests
     public void UpdateDistancesTest()
     {
       // Arrange
-      var shortestPath = new DijkstrasShortestPath();
-
-      var graph = new int[,]
-      {
-        { 0, 0, 0 },
-        { 3, 1, 0 },
-        { 0, 7, 0 }
-      };
+      var shortestPath = new DijkstrasShortestPath(Graph());
 
       var index_u = 1;
       var index_v = 0;
@@ -229,7 +213,7 @@ namespace practicing_algorithms.tests
       this.AssertResults2(shortestPath);
 
       // Act
-      shortestPath.UpdateDistances(graph, index_u);
+      shortestPath.UpdateDistances(index_u);
 
       // Assert
       this.AssertResults3(shortestPath);
@@ -240,14 +224,7 @@ namespace practicing_algorithms.tests
     public void FindShortestPathTest()
     {
       // Arrange
-      var shortestPath = new DijkstrasShortestPath();
-
-      var graph = new int[,]
-      {
-        { 0, 0, 0 },
-        { 3, 1, 0 },
-        { 0, 7, 0 }
-      };
+      var shortestPath = new DijkstrasShortestPath(Graph());
 
       var index_u = 1;
       var index_v = 0;
@@ -266,7 +243,7 @@ namespace practicing_algorithms.tests
       this.AssertResults2(shortestPath);
 
       // Act
-      shortestPath.FindShortestPath(graph);
+      shortestPath.FindShortestPath();
 
       // Assert
       this.AssertResults3(shortestPath);

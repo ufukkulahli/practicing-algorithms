@@ -2,19 +2,27 @@ namespace practicing_algorithms.algorithms
 {
   public class DijkstrasShortestPath
   {
-    public int [] shortestDistances {get;} = new int[9];
-    public bool[] verticesThatAreInShortestDistance   {get;} = new bool[9];
+    public int [] shortestDistances {get; private set;}
+    public bool[] verticesThatAreInShortestDistance {get; private set;}
+    private int[,] graph;
 
-    public void Find(int[,] graph, int source)
+    public DijkstrasShortestPath(int[,] graph)
+    {
+      this.shortestDistances = new int[graph.GetLength(0)];
+      this.verticesThatAreInShortestDistance = new bool[graph.GetLength(0)];
+      this.graph = graph;
+    }
+
+    public void Find(int source)
     {
       this.Reset();
       this.ResetDistanceOfSourceVertex(source);
-      this.FindShortestPath(graph);
+      this.FindShortestPath();
     }
 
     public void Reset()
     {
-      for(var i=0; i<9; i++)
+      for(var i=0; i<this.shortestDistances.Length; i++)
       {
         this.shortestDistances[i] = int.MaxValue;
         this.verticesThatAreInShortestDistance  [i] = false;
@@ -23,27 +31,27 @@ namespace practicing_algorithms.algorithms
 
     public void ResetDistanceOfSourceVertex(int sourceVertexIndex) => this.shortestDistances[sourceVertexIndex] = 0;
 
-    public void FindShortestPath(int[,] graph)
+    public void FindShortestPath()
     {
-      for(var i=0; i<(graph.GetLength(0)-1);  i++)
+      for(var i=0; i<(this.shortestDistances.Length-1);  i++)
       {
         var u = GetMinimumDistancesIndex();
         this.verticesThatAreInShortestDistance[u] = true;
-        UpdateDistances(graph, u);
+        UpdateDistances(u);
       }
     }
 
-    public void UpdateDistances(int[,] graph, int u)
+    public void UpdateDistances(int u)
     {
-      for(var v=0; v<graph.GetLength(0); v++)
+      for(var v=0; v<this.shortestDistances.Length; v++)
       {
-        Update(graph, u, v);
+        Update(u, v);
       }
     }
 
     public void SetShortestDistance(int index, int value) => shortestDistances[index] = value;
 
-    public void Update(int[,] graph, int u, int v)
+    public void Update(int u, int v)
     {
       if
       (
@@ -62,7 +70,7 @@ namespace practicing_algorithms.algorithms
       var minValue = int.MaxValue;
       var minIndex = -1;
 
-      for(var v=0; v<9; v++)
+      for(var v=0; v<this.shortestDistances.Length; v++)
       {
         if(this.verticesThatAreInShortestDistance[v]==false  &&  this.shortestDistances[v] <= minValue)
         {
