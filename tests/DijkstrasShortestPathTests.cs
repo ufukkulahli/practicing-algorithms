@@ -17,7 +17,7 @@ namespace practicing_algorithms.tests
     }
 
     [Fact]
-    public void Test()
+    public void FindTest1()
     {
       // Arrange
       var shortestPath = new DijkstrasShortestPath(Graph());
@@ -256,6 +256,41 @@ namespace practicing_algorithms.tests
       Assert.False(shortestPath.verticesThatAreInShortestDistance[0]);
       Assert.False(shortestPath.verticesThatAreInShortestDistance[1]);
       Assert.False(shortestPath.verticesThatAreInShortestDistance[2]);
+    }
+
+    [Fact]
+    public void FindTest2()
+    {
+      // Arrange
+      int[,] graph =
+      {
+        { 0, 4 , 0, 0 , 0 , 0 , 0, 8 , 0 },
+        { 4, 0 , 8, 0 , 0 , 0 , 0, 11, 0 },
+        { 0, 8 , 0, 7 , 0 , 4 , 0, 0 , 2 },
+        { 0, 0 , 7, 0 , 9 , 14, 0, 0 , 0 },
+        { 0, 0 , 0, 9 , 0 , 10, 0, 0 , 0 },
+        { 0, 0 , 4, 0 , 10, 0 , 2, 0 , 0 },
+        { 0, 0 , 0, 14, 0 , 2 , 0, 1 , 6 },
+        { 8, 11, 0, 0 , 0 , 0 , 1, 0 , 7 },
+        { 0, 0 , 2, 0 , 0 , 0 , 6, 7 , 0 }
+      };
+      var shortestPath = new DijkstrasShortestPath(graph);
+
+      var source = 0;
+
+      // Act
+      shortestPath.Find(source);
+
+      // Assert
+      Assert.Equal(0 , shortestPath.shortestDistances[0]);
+      Assert.Equal(4 , shortestPath.shortestDistances[1]);
+      Assert.Equal(12, shortestPath.shortestDistances[2]);
+      Assert.Equal(19, shortestPath.shortestDistances[3]);
+      Assert.Equal(21, shortestPath.shortestDistances[4]);
+      Assert.Equal(11, shortestPath.shortestDistances[5]);
+      Assert.Equal(9 , shortestPath.shortestDistances[6]);
+      Assert.Equal(8 , shortestPath.shortestDistances[7]);
+      Assert.Equal(14, shortestPath.shortestDistances[8]);
     }
 
   }
