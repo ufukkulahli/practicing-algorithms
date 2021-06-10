@@ -293,5 +293,32 @@ namespace practicing_algorithms.tests
       Assert.Equal(14, shortestPath.shortestDistances[8]);
     }
 
+    [Fact]
+    public void FindTest3()
+    {
+      // Arrange
+      int[,] graph =
+      {
+        {0, 1, 0, 3, 10},
+        {1, 0, 5, 0, 0},
+        {0, 5, 0, 2, 1},
+        {3, 0, 2, 0, 6},
+        {10,0, 1, 6, 0}
+      };
+      var shortestPath = new DijkstrasShortestPath(graph);
+
+      var source = 0;
+
+      // Act
+      shortestPath.Find(source);
+
+      // Assert
+      Assert.Equal(0 , shortestPath.shortestDistances[0]);
+      Assert.Equal(1 , shortestPath.shortestDistances[1]);
+      Assert.Equal(5 , shortestPath.shortestDistances[2]);
+      Assert.Equal(3 , shortestPath.shortestDistances[3]);
+      Assert.Equal(6 , shortestPath.shortestDistances[4]);
+    }
+
   }
 }
