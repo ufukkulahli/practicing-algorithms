@@ -726,5 +726,27 @@ namespace practicing_algorithms.tests
       Assert.Equal(true  , shortestPath.verticesThatAreInShortestDistance[6]);
     }
 
+    [Fact]
+    public void FindFunctionThrowsException()
+    {
+      // Arrange
+      int[,] graph =
+      {
+        { 0, 0, 1, 2, 0, 0, 0 },
+        { 0, 0, 2, 0, 0, 3, 0 },
+        { 1, 2, 0, 1, 3, 0, 0 },
+        { 2, 0, 1, 0, 0, 0, 1 },
+        { 0, 0, 3, 0, 0, 2, 0 },
+        { 0, 3, 0, 0, 2, 0, 1 },
+        { 0, 0, 0, 1, 0, 1, 0 }
+      };
+      var shortestPath = new DijkstrasShortestPath(graph);
+
+      var source = 7;
+
+      // Act & Assert
+      Assert.Throws<System.IndexOutOfRangeException>( () => shortestPath.Find(source) );
+    }
+
   }
 }
